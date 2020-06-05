@@ -7,9 +7,29 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="text-center">BugYourCongressman.com</h3>
+          <%# <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav> %>
+        </div>
+      </header>
+
+      <%= yield %>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Coded with love by Will (<a href="https://twitter.com/AKitchenNerd">@AKitchenNerd</a>).</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
