@@ -1,24 +1,20 @@
 <main role="main" class="inner cover">
-  <h1 class="cover-heading text-center mt-4">
+  <p class="lead my-5">
+    <h2>
+      4 steps to help stop police brutality:
+    </h2>
+
+    <ol>
+      <li>Dial the number below.</li>
+      <li>Type in your zip code.</li>
+      <li>Select a congressmen.</li>
+      <li>Read from the script below.</li>
+    </ol>
+  </p>
+
+  <h2 class="cover-heading text-center my-5">
     <%= link_to '(775) 204-8432', 'tel:7752048432', class: 'text-primary' %>
-  </h1>
-
-  <div class="row">
-    <div class="col-md-10 mx-auto">
-      <p class="lead my-5">
-        <h3>
-          4 steps to help stop police brutality:
-        </h3>
-
-        <ol>
-          <li>Dial the above number.</li>
-          <li>Type in your zip code.</li>
-          <li>Select a congressmen.</li>
-          <li>Read from the script below.</li>
-        </ol>
-      </p>
-    </div>
-  </div>
+  </h2>
 
   <div class="card my-5 text-body" >
     <div class="card-body">
@@ -39,5 +35,27 @@
         Thank you for your time and consideration.
       </p>
     </div>
+  </div>
+
+  <hr class="border-light"/>
+
+  <div class="text-center my-5">
+    <h3>
+      Want to do more?
+    </h3>
+
+    <p>
+      Support this site by donating with the button below. Any money not used to keep
+      the lights on will be donated to the <a href="https://secure.actblue.com/donate/naacp-1">NAACP</a>.
+    </p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_donations" />
+      <input type="hidden" name="business" value="AQEA49Z6MPEC8" />
+      <input type="hidden" name="item_name" value="Support for BugYourCongressman.com. Any money not used to keep the lights on will be donated to the NAACP." />
+      <input type="hidden" name="currency_code" value="USD" />
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+      <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
   </div>
 </main>
