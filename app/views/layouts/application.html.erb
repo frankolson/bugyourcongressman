@@ -5,29 +5,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
+  <body>
+    <div class="cover-container container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto text-center">
         <div class="inner">
-          <h3 class="text-center">BugYourCongressman.com</h3>
-          <%# <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
-          </nav> %>
+          <h3 class="masthead-brand">
+            <%= link_to 'BugYourCongressman.com', root_path %>
+          </h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <%= link_to 'What Is Qualified Immunity?', pages_about_path,
+                  class: "nav-link #{current_class?(pages_about_path)}" %>
+          </nav>
         </div>
       </header>
 
       <%= yield %>
 
-      <footer class="mastfoot mt-auto">
+      <footer class="mastfoot mt-auto text-center">
         <div class="inner">
-          <p>Coded with love by Will (<a href="https://twitter.com/AKitchenNerd">@AKitchenNerd</a>).</p>
+          <p>The code for this site is public on <a href="https://github.com/frankolson/bugyourcongressman">GitHub</a>.</p>
         </div>
       </footer>
     </div>
