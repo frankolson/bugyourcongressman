@@ -61,4 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.hosts << ENV['NGROK_HOST'] if ENV['NGROK_HOST'].present?
+  config.webpacker.check_yarn_integrity = false
 end
