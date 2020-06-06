@@ -93,6 +93,7 @@ git push origin master
 
 ## Contribute
 
-Want to know how to contribute? Checkout the [CONTRIBUTING.md]() and
-[CODE_OF_CONDUCT.md]() docs. Once you have done that, bugs and feature requests
-can be found under in [GitHub issues](https://github.com/frankolson/bugyourcongressman/issues).
+Want to know how to contribute? Checkout the [CONTRIBUTING.md](https://github.com/frankolson/bugyourcongressman/blob/master/CONTRIBUTING.md)
+and [CODE_OF_CONDUCT.md](https://github.com/frankolson/bugyourcongressman/blob/master/CODE_OF_CONDUCT.md)
+docs. Once you have done that, bugs and feature requests can be found under in
+[GitHub issues](https://github.com/frankolson/bugyourcongressman/issues).
