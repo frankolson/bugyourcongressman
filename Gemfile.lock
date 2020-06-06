@@ -114,6 +114,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
+    mocha (1.11.2)
     msgpack (1.3.3)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
@@ -227,6 +228,7 @@ DEPENDENCIES
   civic_information!
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  mocha (~> 1.11, >= 1.11.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)

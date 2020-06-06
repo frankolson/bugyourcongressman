@@ -5,11 +5,11 @@ class SwitchboardsController < ApplicationController
     response.gather(num_digits: '5', action: switchboards_representatives_path, timeout: 20) do |gather|
       alice_says(
         requester: gather,
-        message: "Thanks for using Bug Your Congressman dot com.",
+        message: t('switchboard.welcome.intro'),
       )
       alice_says(
         requester: gather,
-        message: "Please enter your 5 digit zipcode to get a list of representatives you can call.",
+        message: t('switchboard.welcome.prompt'),
       )
     end
 
@@ -27,7 +27,11 @@ class SwitchboardsController < ApplicationController
         congressmen.each_with_index do |congressman, index|
           alice_says(
             requester: response,
-            message: "Press #{index+1} for #{congressman.name}.",
+            message: t(
+              'switchboard.representatives.prompt',
+              digit: index + 1,
+              name: congressman.name
+            ),
           )
         end
       end
@@ -47,7 +51,7 @@ class SwitchboardsController < ApplicationController
     response = Twilio::TwiML::VoiceResponse.new
     alice_says(
       requester: response,
-      message: "Please wait while we connect you to #{member.name}.",
+      message: t('switchboard.dial.instructions', name: member.name),
     )
     response.dial(number: member.phones.first)
     response.hangup
@@ -60,7 +64,7 @@ class SwitchboardsController < ApplicationController
     response = Twilio::TwiML::VoiceResponse.new
     alice_says(
       requester: response,
-      message: "We couldn't detect your zipcode, so we're connecting you to the main Congress switchboard in Washington, DC.",
+      message: t('switchboard.no_zipcode.description'),
     )
     response.dial(number: '2022243121')
     response.hangup
