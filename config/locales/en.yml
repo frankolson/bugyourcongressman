@@ -30,4 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  switchboard:
+    welcome:
+      intro: Thanks for using Bug Your Congressman dot com.
+      prompt:
+        Please enter your 5 digit zipcode to get a list of representatives you
+        can call.
+    representatives:
+      prompt: "Press %{digit} for %{name}."
+    dial:
+      instructions: "Please wait while we connect you to %{name}."
+    no_zipcode:
+      description:
+        We couldn't detect your zipcode, so we're connecting you to the main
+        Congress switchboard in Washington, DC.
