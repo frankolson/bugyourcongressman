@@ -1,14 +1,14 @@
 <main role="main" class="inner cover">
   <p class="lead my-5">
     <h2>
-      4 steps to help stop police brutality:
+      <%= t('views.pages.home.instructions.title') %>
     </h2>
 
     <ol>
-      <li>Dial the number below.</li>
-      <li>Type in your zip code.</li>
-      <li>Select a congressmen.</li>
-      <li>Read from the script below.</li>
+      <li><%= t('views.pages.home.instructions.step_1') %></li>
+      <li><%= t('views.pages.home.instructions.step_2') %></li>
+      <li><%= t('views.pages.home.instructions.step_3') %></li>
+      <li><%= t('views.pages.home.instructions.step_4') %></li>
     </ol>
   </p>
 
@@ -18,21 +18,16 @@
 
   <div class="card my-5 text-body" >
     <div class="card-body">
-      <h5 class="card-title">Read this when calling your representative</h5>
+      <h5 class="card-title">
+        <%= t('views.pages.home.script.title') %>
+      </h5>
+
       <p class="card-text">
-        Hello. I’m a constituent from your district and I’m very concerned about
-        the ongoing violence police officers are using against civilians. I ask
-        you to please support and consider co-sponsoring Rep. Amash’s “Ending
-        Qualified Immunity Act” to restore Americans’ rights to seek relief when
-        their civil rights are violated. If the President won’t sign it, please
-        make every attempt to override a veto. Americans will not tolerate
-        special protections for abuses of power by corrupt or violent officers.
+        <%= t('views.pages.home.script.paragraph_1') %>
       </p>
 
       <p class="card-text">
-        I’ll be eagerly looking for your public announcement of support.
-        And I’ll certainly be voting in November with this issue in mind.
-        Thank you for your time and consideration.
+        <%= t('views.pages.home.script.paragraph_2') %>
       </p>
     </div>
   </div>
@@ -41,12 +36,11 @@
 
   <div class="text-center my-5">
     <h3>
-      Want to do more?
+      <%= t('views.pages.home.donation.title') %>
     </h3>
 
     <p>
-      Support this site by donating with the button below. Any money not used to keep
-      the lights on will be donated to the <a href="https://secure.actblue.com/donate/naacp-1">NAACP</a>.
+      <%= t('views.pages.home.donation.description_html') %>
     </p>
 
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">

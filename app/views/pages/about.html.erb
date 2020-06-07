@@ -1,16 +1,17 @@
 <main role="main" class="inner cover text-center">
-  <h1 class="cover-heading my-5">What is Qualified Immunity?</h1>
+  <h1 class="cover-heading my-5">
+    <%= t('views.pages.about.title') %>
+  </h1>
 
   <p class="lead my-5">
     <blockquote class="blockquote">
       <p class="mb-0">
-        Under the doctrine of qualified immunity, public officials are held to a
-        much lower standard. They can be held accountable only insofar as they
-        violate rights that are “clearly established” in light of existing case law.
+        <%= t('views.pages.about.quotation.content') %>
       </p>
 
       <footer class="blockquote-footer">
-        Amir H. Ali and Emily Clark in
+        <%= t('views.pages.about.quotation.authors') %>
+
         <cite title="Qualified Immunity: Explained">
           <%= link_to 'Qualified Immunity: Explained', 'https://theappeal.org/qualified-immunity-explained/' %>
         </cite>
@@ -19,9 +20,7 @@
   </p>
 
   <p class="my-5">
-    In other words, unless you can prove that a cop violated your rights, <em>and</em>
-    another cop has been successfully sued for that same violation, your case
-    will likely get thrown out. Here is another good description of what that means:
+    <%= t('views.pages.about.quotation.summary_html') %>
   </p>
 
   <div class="embed-responsive embed-responsive-16by9 mb-5">
@@ -33,7 +32,7 @@
 
   <p class="lead my-5">
     <a href="https://www.markey.senate.gov/imo/media/doc/Qualified%20Immunity%20resolution.pdf" class="btn btn-lg btn-secondary">
-      Link to Senate Resolution to Abolish Qualified Immunity for Law Enforcement
+      <%= t('views.pages.about.resolution_link_title') %>
     </a>
   </p>
 </main>
