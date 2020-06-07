@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BugYourCongressman</title>
+    <title>BugYourCongressman.com</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,8 +19,8 @@
             <%= link_to 'BugYourCongressman.com', root_path %>
           </h3>
           <nav class="nav nav-masthead justify-content-center">
-            <%= link_to 'What Is Qualified Immunity?', pages_about_path,
-                  class: "nav-link #{current_class?(pages_about_path)}" %>
+            <%= link_to t('views.layouts.application.navigation.qualified_immunity_about'),
+                  pages_about_path, class: "nav-link #{current_class?(pages_about_path)}" %>
           </nav>
         </div>
       </header>
@@ -29,7 +29,9 @@
 
       <footer class="mastfoot mt-auto text-center">
         <div class="inner">
-          <p>The code for this site is public on <a href="https://github.com/frankolson/bugyourcongressman">GitHub</a>.</p>
+          <p>
+            <%= t('views.layouts.application.footer.attributes_html') %>
+          </p>
         </div>
       </footer>
     </div>
