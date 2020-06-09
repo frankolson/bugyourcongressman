@@ -29,10 +29,19 @@
                     pages_about_path, class: 'nav-link' %>
             </li>
           </ul>
-          <%# <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> %>
+
+          <ul class="navbar-nav ml-md-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="byc-locales" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= I18n.locale %>
+              </a>
+              <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="byc-locales">
+                <%= link_to 'English', { locale: 'en' }, class: 'dropdown-item' %>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Español', { locale: 'es' }, class: 'dropdown-item' %>
+              </div>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
