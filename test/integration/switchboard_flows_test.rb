@@ -20,6 +20,11 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     post switchboards_welcome_url
     assert_response :success
 
+    # redirected to enter zipcode
+    assert_select 'Gather', attributes: { action: switchboards_enter_zipcode_url }
+    post switchboards_enter_zipcode_url(Digits: 1)
+    assert_response :success
+
     # redirected to representatives
     assert_select 'Gather', attributes: { action: switchboards_representatives_path }
     post switchboards_representatives_path(zipcode: user_zipcode) # Twilio will call this
@@ -27,7 +32,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
     # given representative options
     assert_select 'Say', count: 1, text: I18n.t(
-      'switchboard.representatives.prompt',
+      'switchboards.representatives.prompt',
       digit: 1,
       name: 'Jacky Rosen'
     )
@@ -42,6 +47,31 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     # dial congressman
     assert_select 'Dial', '202-224-6244'
     assert_select 'Hangup'
+  end
+
+  test 'properly handeling Spanish locale' do
+    CivicInformation::Representative.stubs(:where).
+      returns([MockRepresentative.new])
+    user_zipcode = '55555'
+
+    # Greeted
+    post switchboards_welcome_url
+    assert_response :success
+
+    # redirected to enter zipcode
+    post switchboards_enter_zipcode_path(Digits: 2)
+    assert_response :success
+    assert_equal :es, I18n.locale
+
+    # redirected to representatives
+    post switchboards_representatives_path(zipcode: user_zipcode) # Twilio will call this
+    assert_response :success
+    assert_equal :es, I18n.locale
+
+    # redirected to dial
+    post switchboards_dial_path(zipcode: user_zipcode) # Twilio will call this
+    assert_response :success
+    assert_equal :es, I18n.locale
   end
 
   test 'zipcode does not match any representatives' do

@@ -2,14 +2,28 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/welcome
   def welcome
     response = Twilio::TwiML::VoiceResponse.new
-    response.gather(num_digits: '5', action: switchboards_representatives_path, timeout: 20) do |gather|
+    response.gather(num_digits: '5', action: switchboards_enter_zipcode_path, timeout: 20, actionOnEmptyResult: true) do |gather|
       alice_says(
         requester: gather,
         message: t('.intro'),
       )
       alice_says(
         requester: gather,
-        message: t('.prompt'),
+        message: t('.language_prompt'),
+      )
+    end
+
+    render xml: response.to_s
+  end
+
+  # POST switchboards/enter_zipcode
+  def enter_zipcode
+    set_locale_after_prompt
+    response = Twilio::TwiML::VoiceResponse.new
+    response.gather(num_digits: '5', action: switchboards_representatives_path, timeout: 20) do |gather|
+      alice_says(
+        requester: gather,
+        message: t('.zipcode_prompt'),
       )
     end
 
@@ -73,7 +87,16 @@ class SwitchboardsController < ApplicationController
     def alice_says(requester: , message:)
       requester.say(
         message: message,
-        voice: 'alice'
+        voice: 'alice',
+        language: I18n.locale.to_s
       )
+    end
+
+    def set_locale_after_prompt
+      if params[:Digits] == '2'
+        I18n.locale = :es
+      else
+        I18n.locale = I18n.default_locale
+      end
     end
 end

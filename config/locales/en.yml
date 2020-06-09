@@ -33,7 +33,9 @@ en:
   switchboards:
     welcome:
       intro: Thanks for using Bug Your Congressman dot com.
-      prompt:
+      language_prompt: Para espanol o prima dos.
+    enter_zipcode:
+      zipcode_prompt:
         Please enter your 5 digit zipcode to get a list of representatives you
         can call.
     representatives:
@@ -51,8 +53,7 @@ en:
       footer:
         attributes_html:
           The code for this site is public on
-          <a href="https://github.com/frankolson/bugyourcongressman">GitHub
-          </a>.
+          <a href="https://github.com/frankolson/bugyourcongressman">GitHub</a>.
   pages:
     home:
       instructions:

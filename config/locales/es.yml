@@ -2,7 +2,9 @@ es:
   switchboards:
     welcome:
       intro: Gracias por utilizar Bug Your Congressman dog com.
-      prompt:
+      language_prompt: Para espanol o prima dos.
+    enter_zipcode:
+      zipcode_prompt:
         Por favor, marque los cinco números del código postal para recibir una
         lista de representantes a que Usted puede llamar.
     representatives:
@@ -20,8 +22,7 @@ es:
       footer:
         attributes_html:
           El código para este sitio es público en
-          <a href="https://github.com/frankolson/bugyourcongressman">GitHub
-          </a>.
+          <a href="https://github.com/frankolson/bugyourcongressman">GitHub</a>.
   pages:
     home:
       instructions:
@@ -65,7 +66,7 @@ es:
         authors: Amir H. Ali y Emily Clark en
         summary_html:
           'En otras palabras, solo si se puede probar que un policía violó sus
-          derechos, … y …. además que a otro policía le han demandado con éxito
+          derechos, <em>y</em> además que a otro policía le han demandado con éxito
           la misma violación, es probable que el caso se desestimará. Aquí se
           demuestra otro ejemplo claro de lo que significa:'
       resolution_link_title:
