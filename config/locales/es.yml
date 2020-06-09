@@ -1,5 +1,5 @@
 es:
-  twilio_language: en-MX
+  twilio_language: es-MX
   switchboards:
     welcome:
       intro: Gracias por utilizar Bug Your Congressman dog com.
