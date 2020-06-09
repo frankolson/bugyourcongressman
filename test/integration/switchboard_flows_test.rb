@@ -57,21 +57,27 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     # Greeted
     post switchboards_welcome_url
     assert_response :success
+    assert_select 'Say[language=?]', 'en-US', count: 1
+    assert_select 'Say[language=?]', 'es-MX', count: 1
 
     # redirected to enter zipcode
     post switchboards_enter_zipcode_path(Digits: 2)
     assert_response :success
     assert_equal :es, I18n.locale
+    assert_select 'Say[language=?]', 'es-MX', count: 1
 
     # redirected to representatives
     post switchboards_representatives_path(zipcode: user_zipcode) # Twilio will call this
     assert_response :success
     assert_equal :es, I18n.locale
+    assert_select 'Say[language=?]', 'es-MX', count: 1
+
 
     # redirected to dial
     post switchboards_dial_path(zipcode: user_zipcode) # Twilio will call this
     assert_response :success
     assert_equal :es, I18n.locale
+    assert_select 'Say[language=?]', 'es-MX', count: 1
   end
 
   test 'zipcode does not match any representatives' do
