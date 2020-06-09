@@ -10,7 +10,7 @@ class SwitchboardsController < ApplicationController
       alice_says(
         requester: gather,
         message: t('.language_prompt'),
-        language: :es
+        language: 'es-MX'
       )
     end
 
@@ -89,7 +89,7 @@ class SwitchboardsController < ApplicationController
       requester.say(
         message: message,
         voice: 'alice',
-        language: language || I18n.locale
+        language: language || t('twilio_language')
       )
     end
 
