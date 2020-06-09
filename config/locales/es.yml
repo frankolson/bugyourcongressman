@@ -2,7 +2,9 @@ es:
   switchboards:
     welcome:
       intro: Gracias por utilizar Bug Your Congressman dog com.
-      prompt:
+      language_prompt: Para espanol o prima dos.
+    enter_zipcode:
+      zipcode_prompt:
         Por favor, marque los cinco números del código postal para recibir una
         lista de representantes a que Usted puede llamar.
     representatives:

@@ -16,7 +16,14 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select 'Say', I18n.t('switchboards.welcome.intro')
-    assert_select 'Say', I18n.t('switchboards.welcome.prompt')
+    assert_select 'Say', I18n.t('switchboards.welcome.language_prompt')
+  end
+
+  test "should post enter_zipcode" do
+    post switchboards_enter_zipcode_url
+
+    assert_response :success
+    assert_select 'Say', I18n.t('switchboards.enter_zipcode.zipcode_prompt')
   end
 
   test "should post representatives with results" do
