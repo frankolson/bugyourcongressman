@@ -12,28 +12,37 @@
   </head>
 
   <body>
-    <div class="cover-container container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto text-center">
-        <div class="inner">
-          <h3 class="masthead-brand">
-            <%= link_to 'BugYourCongressman.com', root_path %>
-          </h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <%= link_to t('.navigation.qualified_immunity_about'),
-                  pages_about_path, class: "nav-link #{current_class?(pages_about_path)}" %>
-          </nav>
-        </div>
-      </header>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <%= link_to 'BugYourCongressman', root_path, class: 'navbar-brand' %>
 
-      <%= yield %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <footer class="mastfoot mt-auto text-center">
-        <div class="inner">
-          <p>
-            <%= t('.footer.attributes_html') %>
-          </p>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= current_class?(pages_about_path) %>%">
+              <%= link_to t('.navigation.qualified_immunity_about'),
+                    pages_about_path, class: 'nav-link' %>
+            </li>
+          </ul>
+          <%# <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> %>
         </div>
-      </footer>
-    </div>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+    <footer class="mt-auto text-center">
+      <p>
+        <%= t('.footer.attributes_html') %>
+      </p>
+    </footer>
   </body>
 </html>
