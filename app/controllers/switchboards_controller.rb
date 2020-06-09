@@ -2,7 +2,7 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/welcome
   def welcome
     response = Twilio::TwiML::VoiceResponse.new
-    response.gather(num_digits: '5', action: switchboards_enter_zipcode_path, timeout: 20, actionOnEmptyResult: true) do |gather|
+    response.gather(num_digits: '1', action: switchboards_enter_zipcode_path, timeout: 20, actionOnEmptyResult: true) do |gather|
       alice_says(
         requester: gather,
         message: t('.intro'),
@@ -10,6 +10,7 @@ class SwitchboardsController < ApplicationController
       alice_says(
         requester: gather,
         message: t('.language_prompt'),
+        language: :es
       )
     end
 
@@ -84,11 +85,11 @@ class SwitchboardsController < ApplicationController
 
   private
 
-    def alice_says(requester: , message:)
+    def alice_says(requester: , message:, language: nil)
       requester.say(
         message: message,
         voice: 'alice',
-        language: I18n.locale.to_s
+        language: language || I18n.locale
       )
     end
 
