@@ -15,8 +15,8 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
     post switchboards_welcome_url
 
     assert_response :success
-    assert_select 'Say', I18n.t('switchboard.welcome.intro')
-    assert_select 'Say', I18n.t('switchboard.welcome.prompt')
+    assert_select 'Say', I18n.t('switchboards.welcome.intro')
+    assert_select 'Say', I18n.t('switchboards.welcome.prompt')
   end
 
   test "should post representatives with results" do
@@ -27,7 +27,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select 'Say', count: 1, text: I18n.t(
-        'switchboard.representatives.prompt',
+        'switchboards.representatives.prompt',
         digit: 1,
         name: 'Jacky Rosen'
       )
@@ -51,7 +51,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select 'Say', I18n.t(
-        'switchboard.dial.instructions',
+        'switchboards.dial.instructions',
         name: 'Jacky Rosen'
       )
     assert_select 'Dial', '202-224-6244'
@@ -61,6 +61,6 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
     post switchboards_no_zipcode_url
 
     assert_response :success
-    assert_select 'Say', I18n.t('switchboard.no_zipcode.description')
+    assert_select 'Say', I18n.t('switchboards.no_zipcode.description')
   end
 end

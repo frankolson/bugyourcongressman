@@ -5,11 +5,11 @@ class SwitchboardsController < ApplicationController
     response.gather(num_digits: '5', action: switchboards_representatives_path, timeout: 20) do |gather|
       alice_says(
         requester: gather,
-        message: t('switchboard.welcome.intro'),
+        message: t('.intro'),
       )
       alice_says(
         requester: gather,
-        message: t('switchboard.welcome.prompt'),
+        message: t('.prompt'),
       )
     end
 
@@ -27,11 +27,7 @@ class SwitchboardsController < ApplicationController
         congressmen.each_with_index do |congressman, index|
           alice_says(
             requester: response,
-            message: t(
-              'switchboard.representatives.prompt',
-              digit: index + 1,
-              name: congressman.name
-            ),
+            message: t('.prompt', digit: index + 1, name: congressman.name),
           )
         end
       end
@@ -51,7 +47,7 @@ class SwitchboardsController < ApplicationController
     response = Twilio::TwiML::VoiceResponse.new
     alice_says(
       requester: response,
-      message: t('switchboard.dial.instructions', name: member.name),
+      message: t('.instructions', name: member.name),
     )
     response.dial(number: member.phones.first)
     response.hangup
@@ -64,7 +60,7 @@ class SwitchboardsController < ApplicationController
     response = Twilio::TwiML::VoiceResponse.new
     alice_says(
       requester: response,
-      message: t('switchboard.no_zipcode.description'),
+      message: t('.description'),
     )
     response.dial(number: '2022243121')
     response.hangup
