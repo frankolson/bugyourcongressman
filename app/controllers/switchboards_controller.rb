@@ -2,7 +2,7 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/welcome
   def welcome
     response = Twilio::TwiML::VoiceResponse.new
-    response.gather(num_digits: '1', action: switchboards_enter_zipcode_path, timeout: 20, actionOnEmptyResult: true) do |gather|
+    response.gather(num_digits: '1', action: switchboards_enter_zipcode_path, timeout: 5, actionOnEmptyResult: true) do |gather|
       alice_says(
         requester: gather,
         message: t('.intro'),
