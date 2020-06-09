@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  twilio_language: en-US
   switchboards:
     welcome:
       intro: Thanks for using Bug Your Congressman dot com.
