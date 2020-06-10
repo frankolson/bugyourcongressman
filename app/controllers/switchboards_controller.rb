@@ -34,7 +34,10 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/representatives
   def representatives
     user_zipcode = params[:Digits]
-    congressmen = CivicInformation::Representative.where(address: user_zipcode)
+    congressmen = CivicInformation::Representative.where(
+      address: user_zipcode,
+      roles: ['legislatorLowerBody', 'legislatorUpperBody']
+    )
 
     response = Twilio::TwiML::VoiceResponse.new
     if congressmen.any?
