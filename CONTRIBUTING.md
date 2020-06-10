@@ -58,6 +58,15 @@ I'm again borrowing these from [Facebook's Guidelines](https://github.com/facebo
 * 2 spaces for indentation rather than tabs
 * You can try running `npm run lint` for style unification
 
+## Internationalization (i18n)
+
+This application supports both the English and Spanish languages. In order for a
+pull request to be approved, any text or verbal presented to the user needs to
+be available in both supported languages.
+
+If you need help with translations, email the repository maintainer
+[Will](mailto:will.olson11@gmail.com).
+
 ## License
 
 By contributing, you agree that your contributions will be licensed under its
