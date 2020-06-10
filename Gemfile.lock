@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/frankolson/ruby-civic-information
-  revision: e9a29eef972711f30ea0ddd8305235546be07df0
+  revision: 4fe796a4cee8d1af0898fb8373a8e1d7351b7230
   branch: master
   specs:
     civic_information (0.1.0)

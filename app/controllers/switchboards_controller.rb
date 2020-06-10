@@ -56,7 +56,10 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/dial
   def dial
     user_zipcode = params[:zipcode] # somehow need to persist this between representatives and dial
-    members_of_congress = CivicInformation::Representative.where(address: user_zipcode)
+    members_of_congress = CivicInformation::Representative.where(
+      address: user_zipcode,
+      roles: ['legislatorLowerBody', 'legislatorUpperBody']
+    )
     member = members_of_congress[params[:Digits].to_i-1]
 
     response = Twilio::TwiML::VoiceResponse.new
