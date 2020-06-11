@@ -50,7 +50,8 @@ en:
   layouts:
     application:
       navigation:
-        qualified_immunity_about: What Is Qualified Immunity?
+        about_qualified_immunity: About "Qualified Immunity"
+        about_congress: About Congress
       footer:
         attributes_html:
           The code for this site is public on
