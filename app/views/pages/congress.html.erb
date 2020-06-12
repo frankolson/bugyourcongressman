@@ -3,22 +3,20 @@
     <div class="row mb-5">
       <div class="col-6 mx-auto mb-3 col-md-4 order-md-2">
         <%= image_tag '/images/congress.jpg', class: 'img-fluid rounded',
-              alt: 'United States Capitol building at night' %>
+              alt: t('.image_alt_text') %>
       </div>
 
       <div class="col-md-8 order-md-1 text-center text-md-left pr-md-5">
         <h1 class="mb-3">
-          What is Congress?
+          <%= t('.title') %>
         </h1>
 
         <p class="lead">
-          It is the legislative branch of the United States federal government.
-          Put simply, it is responsible for making our nation's laws.
+          <%= t('.intro.paragraph_1') %>
+        </p>
 
         <p class="lead">
-          Interestingly, of the three main branches of our government, it is the
-          only one that is elected directly by the American people. This gives
-          us citizens a lot of power.
+          <%= t('.intro.paragraph_2') %>
         </p>
       </div>
     </div>
@@ -34,31 +32,27 @@
     <div class="row mb-5">
       <div class="col-6 mx-auto mb-3">
         <%= image_tag '/images/house.svg', class: 'img-fluid rounded mx-auto d-block',
-              style: 'max-height: 300px', alt: 'Seal of the United States House of Representatives' %>
+              style: 'max-height: 300px', alt: t('.house.logo_alt_text') %>
       </div>
 
       <div class="col-md-6">
-        <h2>The House of Representatives</h2>
+        <h2><%= t('.house.title') %></h2>
 
         <p class="lead font-weight-normal">
-          In the House, each state has some representatives proportional to
-          their population. The more people a state has, the more
-          representatives it gets.
+          <%= t('.house.description.paragraph_1') %>
         </p>
 
         <p class="lead font-weight-normal">
-          Each represenative serves a two year term. Because each term is so
-          short, representatives are constantly considering the opinion of the
-          people. If not, they would be voted out quickly.
+          <%= t('.house.description.paragraph_2') %>
         </p>
 
         <p class="text-muted">
-          The House's special powers include:
+          <%= t('.house.description.powers.title') %>
 
           <ul class="text-muted">
-            <li>Impeaching the president</li>
-            <li>Deciding a presidential elections if there is a tie</li>
-            <li>Any bills regarding taxes start in the House</li>
+            <li><%= t('.house.description.powers.first') %></li>
+            <li><%= t('.house.description.powers.second') %></li>
+            <li><%= t('.house.description.powers.third') %></li>
           </ul>
         </p>
       </div>
@@ -67,31 +61,27 @@
     <div class="row mb-5">
       <div class="col-6 mx-auto mb-3  order-md-12">
         <%= image_tag '/images/senate.svg', class: 'img-fluid rounded mx-auto d-block',
-              style: 'max-height: 300px', alt: 'Seal of the United States Senate' %>
+              style: 'max-height: 300px', alt: t('.senate.logo_alt_text') %>
       </div>
 
       <div class="col-md-6 order-md-1 ">
-        <h2>The Senate</h2>
+        <h2><%= t('.senate.title') %></h2>
 
         <p class="lead font-weight-normal">
-          In the Senate, each state has the same number of senators, two.
-          Therefore, each state is represented equally.
+          <%= t('.senate.description.paragraph_1') %>
         </p>
 
         <p class="lead font-weight-normal">
-          Each senator serves a six year term. The reason for the longer terms,
-          accourding to the founding fathers, was to allow the senators to
-          debate and think through issues, without being too affected by swaying
-          public opinion.
+          <%= t('.senate.description.paragraph_2') %>
         </p>
 
         <p class="text-muted"">
-          The Senate's special powers include:
+          <%= t('.senate.description.powers.title') %>
 
           <ul class="text-muted">
-            <li>Holding impeachment trials</li>
-            <li>Signing treaties</li>
-            <li>Confirming special offices in the government like federal judges</li>
+            <li><%= t('.senate.description.powers.first') %></li>
+            <li><%= t('.senate.description.powers.second') %></li>
+            <li><%= t('.senate.description.powers.third') %></li>
           </ul>
         </p>
       </div>
@@ -106,27 +96,21 @@
 <div class="byc-masthead-followup">
   <div class="container">
     <h2 class="text-center mb-5">
-      Why does Congress even have two parts?
+      <%= t('.two_parts.title') %>
     </h2>
 
     <div class="row mb-5">
       <div class="col-md-8 mx-auto">
         <p class="lead">
-          Well, the founding fathers were concerned that Congress would have to much
-          power. So they split it up and made it so each part had power over the
-          other.
+          <%= t('.two_parts.description.paragraph_1') %>
         </p>
 
         <p class="lead">
-          A bill (proposal for a law) can start in either the Senate or the House.
-          In each case it is debated, revised, and debated some more. Once that is
-          finished, it has to go through the same process in the other part of
-          Congress. Because each part can check the other, neither gets too much
-          power.
+          <%= t('.two_parts.description.paragraph_2') %>
         </p>
 
         <p class="lead">
-          Once both sides agree, you have a law!
+          <%= t('.two_parts.description.paragraph_3') %>
         </p>
       </div>
     </div>
@@ -142,13 +126,11 @@
     <div class="row mb-5">
       <div class="col-md-6 mx-auto">
         <p class="lead mb-4 text-muted">
-          You just read a quick summary of what the United States Congress is.
-          If you are curious about learning more, check out this awesome crash
-          course on YouTube:
+          <%= t('.more_research.content') %>
         </p>
 
         <div class="d-flex flex-column flex-md-row justify-content-center">
-          <%= link_to 'YouTube Congress Crash Course', 'https://youtu.be/n9defOwVWS8',
+          <%= link_to t('.more_research.button_text'), 'https://youtu.be/n9defOwVWS8',
                 class: 'btn btn-lg btn-primary mb-3 mr-md-3' %>
         </div>
       </div>
