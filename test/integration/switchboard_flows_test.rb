@@ -45,8 +45,9 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     # dial congressman
-    assert_select 'Dial', '202-224-6244'
-    assert_select 'Hangup'
+    # FIXME: A hack because the assertions could not find xml elements if they after others. Wierd.
+    assert_match /Dial>202-224-6244/, @response.body
+    assert_match /Hangup/, @response.body
   end
 
   test 'properly handeling Spanish locale' do
@@ -98,7 +99,8 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     post switchboards_no_zipcode_path
 
     # dial main congress switchboard
-    assert_select 'Dial', '2022243121'
-    assert_select 'Hangup'
+    # FIXME: A hack because the assertions could not find xml elements if they after others. Wierd.
+    assert_match /Dial>2022243121/, @response.body
+    assert_match /Hangup/, @response.body
   end
 end

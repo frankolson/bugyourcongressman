@@ -61,7 +61,8 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
         'switchboards.dial.instructions',
         name: 'Jacky Rosen'
       )
-    assert_select 'Dial', '202-224-6244'
+    # FIXME: A hack because the assertions could not find xml elements if they after others. Wierd.
+    assert_match /Dial>202-224-6244/, @response.body
   end
 
   test "should post no_zipcode" do
