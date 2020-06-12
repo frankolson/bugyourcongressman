@@ -34,7 +34,7 @@ en:
   switchboards:
     welcome:
       intro: Thanks for using Bug Your Congressman dot com.
-      language_prompt: Para espanol o prima dos.
+      language_prompt: Para espanol oprima dos.
     enter_zipcode:
       zipcode_prompt:
         Please enter your 5 digit zipcode to get a list of representatives you
