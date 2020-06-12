@@ -87,7 +87,7 @@ en:
           Support this site by donating with the button below. Any money not
           used to keep the lights on will be donated to the
           <a href="https://secure.actblue.com/donate/naacp-1">NAACP</a>.
-    about:
+    about_qualified_immunity:
       title: What is Qualified Immunity?
       quotation:
         content:
@@ -104,7 +104,7 @@ en:
       resolution_link_title:
         Link to Senate Resolution to Abolish Qualified Immunity for Law
         Enforcement
-    congress:
+    about_congress:
       image_alt_text: United States Capitol building at night
       title: What is Congress?
       intro:
