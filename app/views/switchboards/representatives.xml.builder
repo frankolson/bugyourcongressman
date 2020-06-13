@@ -2,7 +2,7 @@ xml.instruct!
 
 if @congressmen.any?
   xml.Gather(num_digits: '1', timeout: 20,
-    action: switchboards_dial_path(zipcode: @user_zipcode)) do
+    action: switchboards_dial_path(zipcode: @user_zipcode, role_type: @selected_role)) do
 
     @congressmen.each_with_index do |congressman, index|
       alice_says(

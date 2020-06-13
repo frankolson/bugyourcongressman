@@ -20,17 +20,24 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post enter_zipcode" do
-    post switchboards_enter_zipcode_url
+    post switchboards_enter_zipcode_url(Digits: '1')
 
     assert_response :success
     assert_select 'Say', I18n.t('switchboards.enter_zipcode.zipcode_prompt')
+  end
+
+  test "should post enter_type" do
+    post switchboards_enter_type_url(Digits: '55555')
+
+    assert_response :success
+    assert_select 'Say', I18n.t('switchboards.enter_type.type_prompt')
   end
 
   test "should post representatives with results" do
     CivicInformation::Representative.stubs(:where).
       returns([MockRepresentative.new])
 
-    post switchboards_representatives_url
+    post switchboards_representatives_url(Digits: '1', representatives: { zipcode: '55555' })
 
     assert_response :success
     assert_select 'Say', count: 1, text: I18n.t(
@@ -43,7 +50,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
   test "should post representatives with no results" do
     CivicInformation::Representative.stubs(:where).returns([])
 
-    post switchboards_representatives_url
+    post switchboards_representatives_url(Digits: '1', representatives: { zipcode: '55555' })
 
     assert_response :success
     assert_select 'Say', count: 0
@@ -54,7 +61,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
     CivicInformation::Representative.stubs(:where).
       returns([MockRepresentative.new])
 
-    post switchboards_dial_url(Digits: '1')
+    post switchboards_dial_url(Digits: '1', dial: { zipcode: '55555', role_type: '1' })
 
     assert_response :success
     assert_select 'Say', I18n.t(
