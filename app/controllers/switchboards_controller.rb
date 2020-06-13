@@ -20,10 +20,10 @@ class SwitchboardsController < ApplicationController
   # POST switchboards/representatives
   def representatives
     @user_zipcode = representatives_params[:zipcode]
-    @chamber = selected_chamber(params[:Digits])
+    @chamber = params[:Digits]
     @congressmen = CivicInformation::Representative.where(
       address: @user_zipcode,
-      roles: @chamber
+      roles: selected_chamber(params[:Digits])
     )
   end
 
