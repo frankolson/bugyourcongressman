@@ -39,9 +39,9 @@ en:
       zipcode_prompt:
         Please enter your 5 digit zipcode to get a list of representatives you
         can call.
-    enter_type:
-      type_prompt:
-        For your senators press one, for your House representatives press two.
+    enter_chamber:
+      chamber_prompt:
+        For your senators, press one. For your representatives, press two.
     representatives:
       prompt: "Press %{digit} for %{name}."
     dial:

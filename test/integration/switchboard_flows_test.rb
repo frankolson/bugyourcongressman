@@ -26,9 +26,9 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     post switchboards_enter_zipcode_url(Digits: 1)
     assert_response :success
 
-    # redirected to enter_type
-    # assert_select 'Gather[action=?]', switchboards_enter_type_path
-    post switchboards_enter_type_path(Digits: 1) # Twilio will call this
+    # redirected to enter_chamber
+    # assert_select 'Gather[action=?]', switchboards_enter_chamber_path
+    post switchboards_enter_chamber_path(Digits: 1) # Twilio will call this
     assert_response :success
 
     # redirected to representatives
@@ -46,9 +46,9 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
     # redirected to dial
     assert_select 'Gather', attributes: {
-        action: switchboards_dial_path(dial: { zipcode: user_zipcode, role_type: '1' })
+        action: switchboards_dial_path(dial: { zipcode: user_zipcode, chamber: '1' })
       }
-    post switchboards_dial_path(dial: { zipcode: user_zipcode, role_type: '1' }) # Twilio will call this
+    post switchboards_dial_path(dial: { zipcode: user_zipcode, chamber: '1' }) # Twilio will call this
     assert_response :success
 
     # dial congressman
@@ -82,7 +82,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
 
     # redirected to dial
-    post switchboards_dial_path(dial: { zipcode: user_zipcode, role_type: '1' }) # Twilio will call this
+    post switchboards_dial_path(dial: { zipcode: user_zipcode, chamber: '1' }) # Twilio will call this
     assert_response :success
     assert_equal :es, I18n.locale
     assert_select 'Say[language=?]', 'es-MX', count: 1

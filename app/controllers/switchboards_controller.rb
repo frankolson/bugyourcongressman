@@ -12,18 +12,18 @@ class SwitchboardsController < ApplicationController
     set_locale_after_prompt
   end
 
-  # POST switchboards/enter_type
-  def enter_type
+  # POST switchboards/enter_chamber
+  def enter_chamber
     @user_zipcode = params[:Digits]
   end
 
   # POST switchboards/representatives
   def representatives
     @user_zipcode = representatives_params[:zipcode]
-    @selected_role = selected_role(params[:Digits])
+    @chamber = selected_chamber(params[:Digits])
     @congressmen = CivicInformation::Representative.where(
       address: @user_zipcode,
-      roles: @selected_role
+      roles: @chamber
     )
   end
 
@@ -31,7 +31,7 @@ class SwitchboardsController < ApplicationController
   def dial
     members_of_congress = CivicInformation::Representative.where(
       address: dial_params[:zipcode],
-      roles: selected_role(params[:role_type])
+      roles: selected_chamber(params[:chamber])
     )
     @congressman = members_of_congress[params[:Digits].to_i-1]
   end
@@ -48,8 +48,8 @@ class SwitchboardsController < ApplicationController
     end
 
     def dial_params
-      params.require(:dial).permit(:zipcode, :role_type).tap do |given_parameters|
-        given_parameters.require([:zipcode, :role_type])
+      params.require(:dial).permit(:zipcode, :chamber).tap do |given_parameters|
+        given_parameters.require([:zipcode, :chamber])
       end
     end
 
@@ -65,7 +65,7 @@ class SwitchboardsController < ApplicationController
       end
     end
 
-    def selected_role(user_selection)
+    def selected_chamber(user_selection)
       user_selection == '1' ? 'legislatorUpperBody' : 'legislatorLowerBody'
     end
 end
