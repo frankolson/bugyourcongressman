@@ -8,6 +8,9 @@ es:
       zipcode_prompt:
         Por favor, marque los cinco números del código postal para recibir una
         lista de representantes a que Usted puede llamar.
+    enter_chamber:
+      chamber_prompt:
+        Para sus senadores, oprima uno. Para sus representantes, oprima dos.
     representatives:
       prompt: "Oprima %{digit} para %{name}."
     dial:
