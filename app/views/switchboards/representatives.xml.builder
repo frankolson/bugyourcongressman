@@ -3,7 +3,7 @@ xml.instruct!
 xml.Response do
   if @congressmen.any?
     xml.Gather(numDigits: '1', timeout: 20,
-      action: switchboards_dial_path(zipcode: @user_zipcode, role_type: @selected_role)) do
+      action: switchboards_dial_path(zipcode: @user_zipcode, chamber: @chamber)) do
 
       @congressmen.each_with_index do |congressman, index|
         alice_says(
