@@ -31,9 +31,9 @@ class SwitchboardsController < ApplicationController
   def dial
     members_of_congress = CivicInformation::Representative.where(
       address: dial_params[:zipcode],
-      roles: selected_chamber(params[:chamber])
+      roles: selected_chamber(dial_params[:chamber])
     )
-    @congressman = members_of_congress[params[:Digits].to_i-1]
+    @congressman = members_of_congress[params[:Digits].to_i - 1]
   end
 
   # POST switchboards/no_zipcode
@@ -66,6 +66,6 @@ class SwitchboardsController < ApplicationController
     end
 
     def selected_chamber(user_selection)
-      user_selection == '1' ? 'legislatorUpperBody' : 'legislatorLowerBody'
+      ['legislatorUpperBody', 'legislatorLowerBody'][user_selection.to_i - 1]
     end
 end
