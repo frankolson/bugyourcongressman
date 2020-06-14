@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def about_us
+  end
+
   def about_qualified_immunity
   end
 

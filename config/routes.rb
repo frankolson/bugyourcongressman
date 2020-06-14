@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root 'pages#home'
 
+    get 'about-us', to: 'pages#about_us', as: :about_us
     get 'about-qualified-immunity', to: 'pages#about_qualified_immunity',
       as: :about_qualified_immunity
     get 'about-congress', to: 'pages#about_congress', as: :about_congress

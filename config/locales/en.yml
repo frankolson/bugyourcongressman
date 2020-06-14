@@ -53,8 +53,11 @@ en:
   layouts:
     application:
       navigation:
-        about_qualified_immunity: About "Qualified Immunity"
-        about_congress: About Congress
+        about:
+          label: About
+          qualified_immunity: About "Qualified Immunity"
+          congress: About Congress
+          us: About Us
       footer:
         attributes_html:
           The code for this site is public on

@@ -22,8 +22,11 @@ es:
   layouts:
     application:
       navigation:
-        about_qualified_immunity: Sobre “Qualified Immunity”
-        about_congress: Sobre el Congreso
+        about:
+          label: Acerca de
+          qualified_immunity: Sobre “Qualified Immunity”
+          congress: Sobre el Congreso
+          us: Sobre nosotras
       footer:
         attributes_html:
           El código para este sitio es público en
