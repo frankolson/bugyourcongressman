@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom-dark">
         <%= link_to 'BugYourCongressman', root_path, class: 'navbar-brand' %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -33,17 +33,17 @@
               </a>
               <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="byc-about">
                 <%= link_to t('.navigation.about.qualified_immunity'),
-                    about_qualified_immunity_path, class: 'dropdown-item' %>
+                      about_qualified_immunity_path, class: 'dropdown-item' %>
 
                 <div class="dropdown-divider"></div>
 
                 <%= link_to t('.navigation.about.congress'),
-                    about_congress_path, class: 'dropdown-item' %>
+                      about_congress_path, class: 'dropdown-item' %>
 
                 <div class="dropdown-divider"></div>
 
                 <%= link_to t('.navigation.about.us'),
-                    about_us_path, class: 'dropdown-item' %>
+                      about_us_path, class: 'dropdown-item' %>
               </div>
             </li>
           </ul>
