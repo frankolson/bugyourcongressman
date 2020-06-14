@@ -34,11 +34,14 @@ en:
   switchboards:
     welcome:
       intro: Thanks for using Bug Your Congressman dot com.
-      language_prompt: Para espanol o prima dos.
+      language_prompt: Para espanol oprima dos.
     enter_zipcode:
       zipcode_prompt:
         Please enter your 5 digit zipcode to get a list of representatives you
         can call.
+    enter_chamber:
+      chamber_prompt:
+        For your senators, press one. For your representatives, press two.
     representatives:
       prompt: "Press %{digit} for %{name}."
     dial:
