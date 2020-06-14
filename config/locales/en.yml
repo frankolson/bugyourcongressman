@@ -66,23 +66,34 @@ en:
         step_2: Type in your zip code.
         step_3: Select a congressmen.
         step_4: Read from the script below.
-      script:
-        title: Read this when calling your representative
-        paragraph_1:
-          Hello. I’m a constituent from your district and I’m very concerned
-          about the ongoing violence police officers are using against
-          civilians.
-        paragraph_2:
-          I ask you to please support and consider co-sponsoring
-          Rep. Amash’s “Ending Qualified Immunity Act” to restore Americans’
-          rights to seek relief when their civil rights are violated. If the
-          President won’t sign it, please make every attempt to override a
-          veto. Americans will not tolerate special protections for abuses of
-          power by corrupt or violent officers.
-        paragraph_3:
-          I’ll be eagerly looking for your public announcement of support.
-          And I’ll certainly be voting in November with this issue in mind.
-          Thank you for your time and consideration.
+      scripts:
+        title: Use this when calling Congress
+        senate:
+          title: For calling your senator
+          paragraph_1_html:
+            Hello, my name is <strong>YOUR NAME</strong>. I'm a constituent from
+            <strong>YOUR CITY</strong>, zip code <strong>YOUR ZIP CODE</strong>.
+            I don't need a response.
+          paragraph_2:
+            I’m very concerned about the ongoing violence police officers are
+            using against civilians and I strongly encourage the senator to vote
+            with senators Harris, Markey, Booker on their “Senate Resolution
+            to Abolish Qualified Immunity for Law Enforcement“.
+          paragraph_3:
+            Thank you for your hard work!
+        house:
+          title: For calling your representative
+          paragraph_1_html:
+            Hello, my name is <strong>YOUR NAME</strong>. I'm a constituent from
+            <strong>YOUR CITY</strong>, zip code <strong>YOUR ZIP CODE</strong>.
+            I don't need a response.
+          paragraph_2:
+            I’m very concerned about the ongoing violence police officers are
+            using against civilians and I strongly encourage the representative
+            to support and consider co-sponsoring Representative Amash’s
+            “Ending Qualified Immunity Act”.
+          paragraph_3:
+            Thank you for your hard work!
       donation:
         title: Want to do more?
         description_html:

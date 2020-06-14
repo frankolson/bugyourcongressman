@@ -35,24 +35,24 @@ es:
         step_2: Marque el código postal.
         step_3: Seleccione un/una congresista.
         step_4: Lea del guión abajo.
-      script:
-        title: Lea lo siguiente cuando llame a su representante
-        paragraph_1:
-          Hola, soy un votante del distrito suyo y estoy muy preocupado/a por lo
-          que está pasando con la violencia perpetua policial contra los
-          ciudadanos.
-        paragraph_2:
-          Le pido que por favor apoye al iniciativo de Representante
-          Amash de “Ending Qualified Immunity Act” para recuperar los derechos
-          americanos a buscar alivio cuando sus derechos civiles están violados.
-          Si es que el Presidente Trump no lo firmará, por favor, le pido que
-          haga cualquier intento a invalidar su veto. Los americanos no
-          soportarán protecciones particulares para los abusos de poder por
-          oficiales corruptos o violentos de la policía.
-        paragraph_3:
-          Espero con anticipación su anuncio público de apoyo. Con certeza,
-          tendré en cuenta este asunto cuando voto en noviembre. Gracias por su
-          tiempo y consideración.
+      scripts:
+        title: Todo
+        senate:
+          title: Todo
+          paragraph_1_html:
+            Todo
+          paragraph_2:
+            Todo
+          paragraph_3:
+            Todo
+        house:
+          title: Todo
+          paragraph_1_html:
+            Todo
+          paragraph_2:
+           Todo
+          paragraph_3:
+            Todo
       donation:
         title: Quiere hacer más?
         description_html:
