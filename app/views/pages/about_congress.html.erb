@@ -1,0 +1,139 @@
+<main class="byc-masthead byc-masthead-background-style-2" role="main">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-6 mx-auto mb-3 col-md-4 order-md-2">
+        <%= image_tag '/images/congress.jpg', class: 'img-fluid rounded',
+              alt: t('.image_alt_text') %>
+      </div>
+
+      <div class="col-md-8 order-md-1 text-center text-md-left pr-md-5">
+        <h1 class="mb-3">
+          <%= t('.title') %>
+        </h1>
+
+        <p class="lead">
+          <%= t('.intro.paragraph_1') %>
+        </p>
+
+        <p class="lead">
+          <%= t('.intro.paragraph_2') %>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="container">
+  <hr class="mb-5"/>
+</div>
+
+<div class="byc-masthead-followup">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-6 mx-auto mb-3">
+        <%= image_tag '/images/house.svg', class: 'img-fluid rounded mx-auto d-block',
+              style: 'max-height: 300px', alt: t('.house.logo_alt_text') %>
+      </div>
+
+      <div class="col-md-6">
+        <h2><%= t('.house.title') %></h2>
+
+        <p class="lead font-weight-normal">
+          <%= t('.house.description.paragraph_1') %>
+        </p>
+
+        <p class="lead font-weight-normal">
+          <%= t('.house.description.paragraph_2') %>
+        </p>
+
+        <p class="text-muted">
+          <%= t('.house.description.powers.title') %>
+
+          <ul class="text-muted">
+            <li><%= t('.house.description.powers.first') %></li>
+            <li><%= t('.house.description.powers.second') %></li>
+            <li><%= t('.house.description.powers.third') %></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-6 mx-auto mb-3  order-md-12">
+        <%= image_tag '/images/senate.svg', class: 'img-fluid rounded mx-auto d-block',
+              style: 'max-height: 300px', alt: t('.senate.logo_alt_text') %>
+      </div>
+
+      <div class="col-md-6 order-md-1 ">
+        <h2><%= t('.senate.title') %></h2>
+
+        <p class="lead font-weight-normal">
+          <%= t('.senate.description.paragraph_1') %>
+        </p>
+
+        <p class="lead font-weight-normal">
+          <%= t('.senate.description.paragraph_2') %>
+        </p>
+
+        <p class="text-muted"">
+          <%= t('.senate.description.powers.title') %>
+
+          <ul class="text-muted">
+            <li><%= t('.senate.description.powers.first') %></li>
+            <li><%= t('.senate.description.powers.second') %></li>
+            <li><%= t('.senate.description.powers.third') %></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="mb-5"/>
+</div>
+
+<div class="byc-masthead-followup">
+  <div class="container">
+    <h2 class="text-center mb-5">
+      <%= t('.two_parts.title') %>
+    </h2>
+
+    <div class="row mb-5">
+      <div class="col-md-8 mx-auto">
+        <p class="lead">
+          <%= t('.two_parts.description.paragraph_1') %>
+        </p>
+
+        <p class="lead">
+          <%= t('.two_parts.description.paragraph_2') %>
+        </p>
+
+        <p class="lead">
+          <%= t('.two_parts.description.paragraph_3') %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="mb-5"/>
+</div>
+
+<div class="byc-masthead-followup">
+  <div class="container text-center">
+    <div class="row mb-5">
+      <div class="col-md-6 mx-auto">
+        <p class="lead mb-4 text-muted">
+          <%= t('.more_research.content') %>
+        </p>
+
+        <div class="d-flex flex-column flex-md-row justify-content-center">
+          <%= link_to t('.more_research.button_text'), 'https://youtu.be/n9defOwVWS8',
+                class: 'btn btn-lg btn-primary mb-3 mr-md-3' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

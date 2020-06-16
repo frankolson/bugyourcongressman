@@ -24,9 +24,14 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item <%= current_class?(pages_about_path) %>%">
-              <%= link_to t('.navigation.qualified_immunity_about'),
-                    pages_about_path, class: 'nav-link' %>
+            <li class="nav-item <%= current_class?(about_qualified_immunity_path) %>%">
+              <%= link_to t('.navigation.about_qualified_immunity'),
+                    about_qualified_immunity_path, class: 'nav-link' %>
+            </li>
+
+            <li class="nav-item <%= current_class?(about_congress_path) %>%">
+              <%= link_to t('.navigation.about_congress'),
+                    about_congress_path, class: 'nav-link' %>
             </li>
           </ul>
 
