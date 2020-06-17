@@ -34,11 +34,22 @@ body {
 
 .byc-masthead {
   padding: 3rem 15px;
-  background: linear-gradient(to right bottom,#f5f6fb 50%,#fff 50%);
+
+  &.byc-masthead-background-style-1 {
+    background: linear-gradient(to right bottom,#f5f6fb 50%,#fff 50%);
+  }
+
+  &.byc-masthead-background-style-2 {
+    background: linear-gradient(to left bottom,#f5f6fb 50%,#fff 50%);
+  }
 
   h1 {
     font-size: 4rem;
     line-height: 1;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 
   .lead {

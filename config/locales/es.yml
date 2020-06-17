@@ -22,7 +22,8 @@ es:
   layouts:
     application:
       navigation:
-        qualified_immunity_about: Qué quiere decir “Qualified Immunity”?
+        about_qualified_immunity: Sobre “Qualified Immunity”
+        about_congress: Sobre el Congreso
       footer:
         attributes_html:
           El código para este sitio es público en
@@ -59,7 +60,7 @@ es:
           Apoye este sitio por donar con el botón abajo. Todos los fondos, menos
           los que se necesitan para mantener las luces prendidas, se donarán a
           <a href="https://secure.actblue.com/donate/naacp-1">NAACP</a>.
-    about:
+    about_qualified_immunity:
       title: Qué quiere decir “Qualified Immunity”?
       quotation:
         content:
@@ -76,3 +77,75 @@ es:
       resolution_link_title:
         Enlace a “Senate Resolution to Abolish Qualified Immunity for Law
         Enforcement”
+    about_congress:
+      image_alt_text: Edificio de la capital de los Estados Unidos por la noche
+      title: ¿Que es el Congreso?
+      intro:
+        paragraph_1:
+          Es el poder legislativo del gobierno federal de los Estados Unidos.
+          En pocas palabras, es responsable de hacer las leyes de nuestra
+          nación.
+        paragraph_2:
+          Curiosamente, de las tres poderes del gobierno, es la única que es
+          elegida directamente por el pueblo estadounidense. Esto nos da mucho
+          poder a los ciudadanos.
+      house:
+        title: Cámara de Representantes
+        logo_alt_text:
+          Sella de la Cámara de Representantes de los Estados Unidos
+        description:
+          paragraph_1:
+            En la Cámara, cada estado tiene una porción de representantes
+            proporcionales por población. Cuantas más personas tenga un estado,
+            mas representantes tendra.
+          paragraph_2:
+            Cada representante cumple un mandato de dos años. Porque cada
+            mandato es tan corto, los representantes están constantemente
+            considerando la opinión de la gente. Si no, no fueran elegidos.
+          powers:
+            title: "Los poderes especiales de la Cámara incluyen:"
+            first: Acusar a el presidente
+            second: Decedendo una elección presidencial si hay un empate
+            third:
+              Cualquier iniciativa de ley relacionada con impuestos empieza en
+              Cámara
+      senate:
+        title: El Senado
+        logo_alt_text: El sello de el Senado de los Estados Unidos
+        description:
+          paragraph_1:
+            En el Senado, cada estado tiene el mismo número de senadores.. dos.
+            Por lo tanto, cada estado esta representado igualmente.
+          paragraph_2:
+            Cada senador sirve un término de seis años. La razón por los
+            términos más largos, de acuerdo a los padres fundadores, era para
+            permitir a los senadores el debate y el pensamiento sobre
+            diferencias, sin que se vieran afectados por la opinión pública.
+          powers:
+            title: "Los poderes especiales del Senado incluyen:"
+            first: Llevar a cabo el juicio del acuzacion de el presidente
+            second: Firmado tratados
+            third:
+              Confirmación de oficinas gubernamentales especiales como los
+              jueces federales
+      two_parts:
+        title: ¿Por que el Congreso tiene dos lados?
+        description:
+          paragraph_1:
+            Bueno, es por que los padres fundadores se preocuparon que el
+            Congreso puedo tener demasiado poder. Así que lo dividieron para
+            que una cada parte tuviera poder sobre la otra.
+          paragraph_2:
+            Una iniciativa de ley (propuesta de ley) puede empezar tanto en el
+            Senado como en la Cámara. En cada caso es debatida, revisada, y
+            debatida nuevamente. Quando es terminada, tiene que ir al mismo
+            proceso en la otra parte del Congreso. Por que cada parte revisa
+            la otra, así ninguna tiene demasiado poder.
+          paragraph_3:
+            Una vez que ambos lados están de acuerdo, se tiene una nueva ley!
+      more_research:
+        content:
+          "Acaba de leer un breve resumen de lo que es el Congreso del Estados
+          Unidos. Si usted esta interesado en apprendiendo mas, vea este corto
+          video muy útil en Youtube:"
+        button_text: Youtube Video Corto sobre el Congreso
