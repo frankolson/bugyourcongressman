@@ -83,12 +83,12 @@ bin/rails test:system
 
 ## Deploy
 
-Pushes to master will trigger a deploy of the master branch to Heroku. If any
+Pushes to `main` will trigger a deploy of the `main` branch to Heroku. If any
 new migrations are present, those will be run before the new release is
 deployed.
 
 ```
-git push origin master
+git push origin main
 ```
 
 ## Contribute
