@@ -13,6 +13,6 @@ xml.Response do
       end
     end
   else
-    xml.Redirect(switchboards_no_zipcode_path)
+    xml.Redirect(switchboards_invalid_zipcode_path)
   end
 end
