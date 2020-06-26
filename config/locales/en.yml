@@ -33,23 +33,29 @@ en:
   twilio_language: en-US
   switchboards:
     welcome:
-      intro: Thanks for using Bug Your Congressman dot com.
-      language_prompt: Para espanol oprima dos.
+      create:
+        intro: Thanks for using Bug Your Congressman dot com.
+        language_prompt: Para espanol oprima dos.
     enter_zipcode:
-      zipcode_prompt:
-        Please enter your 5 digit zipcode to get a list of representatives you
-        can call.
+      create:
+        zipcode_prompt:
+          Please enter your 5 digit zipcode to get a list of representatives you
+          can call.
     enter_chamber:
-      chamber_prompt:
-        For your senators, press one. For your representatives, press two.
+      create:
+        chamber_prompt:
+          For your senators, press one. For your representatives, press two.
     representatives:
-      prompt: "Press %{digit} for %{name}."
+      create:
+        prompt: "Press %{digit} for %{name}."
     dial:
-      instructions: "Please wait while we connect you to %{name}."
+      create:
+        instructions: "Please wait while we connect you to %{name}."
     no_zipcode:
-      description:
-        We couldn't detect your zipcode, so we're connecting you to the main
-        Congress switchboard in Washington, DC.
+      create:
+        description:
+          We couldn't detect your zipcode, so we're connecting you to the main
+          Congress switchboard in Washington, DC.
   layouts:
     application:
       navigation:

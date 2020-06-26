@@ -2,23 +2,29 @@ es:
   twilio_language: es-MX
   switchboards:
     welcome:
-      intro: Gracias por utilizar Bug Your Congressman dog com.
-      language_prompt: Para espanol o prima dos.
+      create:
+        intro: Gracias por utilizar Bug Your Congressman dog com.
+        language_prompt: Para espanol o prima dos.
     enter_zipcode:
-      zipcode_prompt:
-        Por favor, marque los cinco números del código postal para recibir una
-        lista de representantes a que Usted puede llamar.
+      create:
+        zipcode_prompt:
+          Por favor, marque los cinco números del código postal para recibir una
+          lista de representantes a que Usted puede llamar.
     enter_chamber:
-      chamber_prompt:
-        Para sus senadores, oprima uno. Para sus representantes, oprima dos.
+      create:
+        chamber_prompt:
+          Para sus senadores, oprima uno. Para sus representantes, oprima dos.
     representatives:
-      prompt: "Oprima %{digit} para %{name}."
+      create:
+        prompt: "Oprima %{digit} para %{name}."
     dial:
-      instructions: "Por favor, espere un momento para conectarle a %{name}."
+      create:
+        instructions: "Por favor, espere un momento para conectarle a %{name}."
     no_zipcode:
-      description:
-        No se detecta su código postal. Espere un momento mientras conectarle
-        con la oficina central del Congreso en Washington DC.
+      create:
+        description:
+          No se detecta su código postal. Espere un momento mientras conectarle
+          con la oficina central del Congreso en Washington DC.
   layouts:
     application:
       navigation:

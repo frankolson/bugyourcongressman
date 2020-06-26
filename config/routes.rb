@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  post 'switchboards/welcome', to: 'switchboards#welcome'
-  post 'switchboards/enter_zipcode', to: 'switchboards#enter_zipcode'
+  namespace :switchboards do
+    resource :welcome,       controller: :welcome,       only: :create
+    resource :enter_zipcode, controller: :enter_zipcode, only: :create
+  end
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root 'pages#home'
@@ -9,11 +11,12 @@ Rails.application.routes.draw do
       as: :about_qualified_immunity
     get 'about-congress', to: 'pages#about_congress', as: :about_congress
 
-    post 'switchboards/enter_chamber', to: 'switchboards#enter_chamber'
-    post 'switchboards/representatives', to: 'switchboards#representatives'
-    post 'switchboards/no_zipcode', to: 'switchboards#no_zipcode'
-    post 'switchboards/dial', to: 'switchboards#dial'
-
+    namespace :switchboards do
+      resource :enter_chamber,   controller: :enter_chamber,   only: :create
+      resource :representatives, controller: :representatives, only: :create
+      resource :no_zipcode,      controller: :no_zipcode,      only: :create
+      resource :dial,            controller: :dial,            only: :create
+    end
   end
   # match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: :all,
   #   constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

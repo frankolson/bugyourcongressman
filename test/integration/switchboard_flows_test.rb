@@ -39,7 +39,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
     # given representative options
     assert_select 'Say', count: 1, text: I18n.t(
-      'switchboards.representatives.prompt',
+      'switchboards.representatives.create.prompt',
       digit: 1,
       name: 'Jacky Rosen'
     )
