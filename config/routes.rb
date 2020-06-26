@@ -12,10 +12,10 @@ Rails.application.routes.draw do
     get 'about-congress', to: 'pages#about_congress', as: :about_congress
 
     namespace :switchboards do
-      resource :enter_chamber,   controller: :enter_chamber,   only: :create
-      resource :representatives, controller: :representatives, only: :create
-      resource :no_zipcode,      controller: :no_zipcode,      only: :create
-      resource :dial,            controller: :dial,            only: :create
+      resource :select_chamber,     controller: :select_chamber,     only: :create
+      resource :select_congressman, controller: :select_congressman, only: :create
+      resource :invalid_zipcode,    controller: :invalid_zipcode,    only: :create
+      resource :dial,               controller: :dial,               only: :create
     end
   end
   # match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: :all,

@@ -26,20 +26,20 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     post switchboards_enter_zipcode_url(Digits: 1)
     assert_response :success
 
-    # redirected to enter_chamber
-    # assert_select 'Gather[action=?]', switchboards_enter_chamber_path
-    post switchboards_enter_chamber_path(Digits: 1) # Twilio will call this
+    # redirected to select_chamber
+    # assert_select 'Gather[action=?]', switchboards_select_chamber_path
+    post switchboards_select_chamber_path(Digits: 1) # Twilio will call this
     assert_response :success
 
     # redirected to representatives
     # assert_select 'Gather[action=?]',
-    #   switchboards_representatives_path(representatives: { zipcode: user_zipcode })
-    post switchboards_representatives_path(representatives: { zipcode: user_zipcode }) # Twilio will call this
+    #   switchboards_select_congressman_path(select_congressman: { zipcode: user_zipcode })
+    post switchboards_select_congressman_path(select_congressman: { zipcode: user_zipcode }) # Twilio will call this
     assert_response :success
 
     # given representative options
     assert_select 'Say', count: 1, text: I18n.t(
-      'switchboards.representatives.create.prompt',
+      'switchboards.select_congressman.create.prompt',
       digit: 1,
       name: 'Jacky Rosen'
     )
@@ -74,8 +74,8 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     assert_equal :es, I18n.locale
     assert_select 'Say[language=?]', 'es-MX', count: 1
 
-    # redirected to representatives
-    post switchboards_representatives_path(representatives: { zipcode: user_zipcode }) # Twilio will call this
+    # redirected to select_congressman
+    post switchboards_select_congressman_path(select_congressman: { zipcode: user_zipcode }) # Twilio will call this
     assert_response :success
     assert_equal :es, I18n.locale
     assert_select 'Say[language=?]', 'es-MX', count: 1
@@ -88,7 +88,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     assert_select 'Say[language=?]', 'es-MX', count: 1
   end
 
-  test 'zipcode does not match any representatives' do
+  test 'zipcode does not match any congressmen' do
     CivicInformation::Representative.stubs(:where).returns([])
     user_zipcode = '55555'
 
@@ -96,14 +96,14 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
     post switchboards_welcome_url
     assert_response :success
 
-    # redirected to representatives
-    assert_select 'Gather', attributes: { action: switchboards_representatives_path }
-    post switchboards_representatives_path(representatives: { zipcode: user_zipcode }) # Twilio will call this
+    # redirected to select_congressman
+    assert_select 'Gather', attributes: { action: switchboards_select_congressman_path }
+    post switchboards_select_congressman_path(select_congressman: { zipcode: user_zipcode }) # Twilio will call this
     assert_response :success
 
-    # redirected to no zipcode path
-    assert_select 'Redirect', switchboards_no_zipcode_path
-    post switchboards_no_zipcode_path
+    # redirected to invalid zipcode path
+    assert_select 'Redirect', switchboards_invalid_zipcode_path
+    post switchboards_invalid_zipcode_path
 
     # dial main congress switchboard
     # FIXME: A hack because the assertions could not find xml elements if they after others. Wierd.

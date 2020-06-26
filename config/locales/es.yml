@@ -10,17 +10,17 @@ es:
         zipcode_prompt:
           Por favor, marque los cinco números del código postal para recibir una
           lista de representantes a que Usted puede llamar.
-    enter_chamber:
+    select_chamber:
       create:
         chamber_prompt:
           Para sus senadores, oprima uno. Para sus representantes, oprima dos.
-    representatives:
+    select_congressman:
       create:
         prompt: "Oprima %{digit} para %{name}."
     dial:
       create:
         instructions: "Por favor, espere un momento para conectarle a %{name}."
-    no_zipcode:
+    invalid_zipcode:
       create:
         description:
           No se detecta su código postal. Espere un momento mientras conectarle

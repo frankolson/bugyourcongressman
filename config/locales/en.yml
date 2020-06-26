@@ -41,17 +41,17 @@ en:
         zipcode_prompt:
           Please enter your 5 digit zipcode to get a list of representatives you
           can call.
-    enter_chamber:
+    select_chamber:
       create:
         chamber_prompt:
           For your senators, press one. For your representatives, press two.
-    representatives:
+    select_congressman:
       create:
         prompt: "Press %{digit} for %{name}."
     dial:
       create:
         instructions: "Please wait while we connect you to %{name}."
-    no_zipcode:
+    invalid_zipcode:
       create:
         description:
           We couldn't detect your zipcode, so we're connecting you to the main
