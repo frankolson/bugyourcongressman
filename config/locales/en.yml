@@ -76,31 +76,23 @@ en:
         step_3: Select a congressmen.
         step_4: Read from the script below.
       scripts:
-        title: Use this when calling Congress
+        title: The George Floyd Justice in Policing Act of 2020
+        subtitle:
+          The House of Representatives just passed this bill which, "addresses a
+          wide range of policies and issues regarding policing practices and law
+          enforcement accountability". Now it's up to the Senate. Call your
+          Senator and let them know this is an important issue for you.
         senate:
-          title: For calling your senator
+          title: When calling your senator, this can help
           paragraph_1_html:
             Hello, my name is <strong>YOUR NAME</strong>. I'm a constituent from
             <strong>YOUR CITY</strong>, zip code <strong>YOUR ZIP CODE</strong>.
             I don't need a response.
-          paragraph_2:
+          paragraph_2_html:
             I’m very concerned about the ongoing violence police officers are
             using against civilians and I strongly encourage the senator to vote
-            with senators Harris, Markey, Booker on their “Senate Resolution
-            to Abolish Qualified Immunity for Law Enforcement“.
-          paragraph_3:
-            Thank you for your hard work!
-        house:
-          title: For calling your representative
-          paragraph_1_html:
-            Hello, my name is <strong>YOUR NAME</strong>. I'm a constituent from
-            <strong>YOUR CITY</strong>, zip code <strong>YOUR ZIP CODE</strong>.
-            I don't need a response.
-          paragraph_2:
-            I’m very concerned about the ongoing violence police officers are
-            using against civilians and I strongly encourage the representative
-            to support and consider co-sponsoring Representative Amash’s
-            “Ending Qualified Immunity Act”.
+            yes on bill <strong>H.R.7120</strong>, the “George Floyd Justice in
+            Policing Act of 2020“.
           paragraph_3:
             Thank you for your hard work!
       donation:

@@ -46,20 +46,14 @@ es:
         step_4: Lea del guión abajo.
       scripts:
         title: Todo
+        subtitle:
+          Todo
         senate:
           title: Todo
           paragraph_1_html:
             Todo
-          paragraph_2:
+          paragraph_2_html:
             Todo
-          paragraph_3:
-            Todo
-        house:
-          title: Todo
-          paragraph_1_html:
-            Todo
-          paragraph_2:
-           Todo
           paragraph_3:
             Todo
       donation:
