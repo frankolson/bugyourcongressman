@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'twilio-ruby', '~> 5.36', '>= 5.36.0'
-gem 'civic_information', git: 'https://github.com/frankolson/ruby-civic-information', branch: 'master'
+gem 'civic_information', '~> 0.1', '>= 0.1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

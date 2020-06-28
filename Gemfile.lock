@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/frankolson/ruby-civic-information
-  revision: 4fe796a4cee8d1af0898fb8373a8e1d7351b7230
-  branch: master
-  specs:
-    civic_information (0.1.0)
-      httparty (= 0.18.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +72,8 @@ GEM
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    civic_information (0.1.0)
+      httparty (= 0.18.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
@@ -225,7 +219,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  civic_information!
+  civic_information (~> 0.1, >= 0.1.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mocha (~> 1.11, >= 1.11.2)
