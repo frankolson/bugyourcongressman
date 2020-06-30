@@ -44,24 +44,26 @@ es:
         step_2: Marque el código postal.
         step_3: Seleccione un/una congresista.
         step_4: Lea del guión abajo.
-      script:
-        title: Lea lo siguiente cuando llame a su representante
-        paragraph_1:
-          Hola, soy un votante del distrito suyo y estoy muy preocupado/a por lo
-          que está pasando con la violencia perpetua policial contra los
-          ciudadanos.
-        paragraph_2:
-          Le pido que por favor apoye al iniciativo de Representante
-          Amash de “Ending Qualified Immunity Act” para recuperar los derechos
-          americanos a buscar alivio cuando sus derechos civiles están violados.
-          Si es que el Presidente Trump no lo firmará, por favor, le pido que
-          haga cualquier intento a invalidar su veto. Los americanos no
-          soportarán protecciones particulares para los abusos de poder por
-          oficiales corruptos o violentos de la policía.
-        paragraph_3:
-          Espero con anticipación su anuncio público de apoyo. Con certeza,
-          tendré en cuenta este asunto cuando voto en noviembre. Gracias por su
-          tiempo y consideración.
+      scripts:
+        title: Justicia para George Floyd en el acta de justicia en el 2020
+        subtitle:
+          La traducción va aquí. La Cámara de representantes pasó una iniciativa
+          de ley que “direcciona un amplio rango de políticas y temas referentes
+          a la policía y responsabilidad del enforzamiento de la ley” Ahora
+          depende del Senado. Hablale a su Senador y communica que esto es un
+          asunto importante para ti.
+        senate:
+          title: Cuando llames a su Senador, esto puede ayudar
+          paragraph_1_html:
+            Hola, me llamó <strong>SU NOMBRE</strong>. Soy constituyente de
+            <strong>SU CIUDAD</strong>, <strong>SU CÓDIGO POSTAL</strong>.
+          paragraph_2_html:
+            Estoy muy preocupado con la continua violencia de la policía usada
+            contra la población civil y llamó urgentemente que mi senador apoya
+            la iniciativa de ley <strong>H.R.7120</strong>, “Justicia para
+            George Floyd en el Acta de Justicia en el 2020.”
+          paragraph_3:
+            ¡Gracias por su esfuerzo!
       donation:
         title: Quiere hacer más?
         description_html:
