@@ -1,16 +1,16 @@
 require 'test_helper'
 
-class MockOfficer
-  def name
-    'Jacky Rosen'
-  end
-
-  def phones
-    ['202-224-6244']
-  end
-end
-
 class SwitchboardControllerTest < ActionDispatch::IntegrationTest
+  class MockOfficer
+    def name
+      'Jacky Rosen'
+    end
+
+    def phones
+      ['202-224-6244']
+    end
+  end
+
   test "should post welcome" do
     post switchboards_welcome_url
 
@@ -35,7 +35,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should post select_congressman with results" do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockRepresentative.new]))
+      returns(stub(officers: [MockOfficer.new]))
 
     post switchboards_select_congressman_url(Digits: '1', select_congressman: { zipcode: '55555' })
 
@@ -60,7 +60,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should post dial" do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockRepresentative.new]))
+      returns(stub(officers: [MockOfficer.new]))
 
     post switchboards_dial_url(Digits: '1', dial: { zipcode: '55555', chamber: '1' })
 
