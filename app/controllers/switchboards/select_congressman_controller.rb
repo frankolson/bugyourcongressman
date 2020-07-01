@@ -6,7 +6,7 @@ class Switchboards::SelectCongressmanController < Switchboards::BaseController
     @congressmen = CivicInformation::RepresentativesResource.where(
       address: @user_zipcode,
       roles: selected_chamber(params[:Digits])
-    ).officers
+    ).officials
   end
 
   private

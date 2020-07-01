@@ -35,7 +35,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should post select_congressman with results" do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockOfficer.new]))
+      returns(stub(officials: [MockOfficer.new]))
 
     post switchboards_select_congressman_url(Digits: '1', select_congressman: { zipcode: '55555' })
 
@@ -49,7 +49,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should post select_congressman with no results" do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: []))
+      returns(stub(officials: []))
 
     post switchboards_select_congressman_url(Digits: '1', select_congressman: { zipcode: '55555' })
 
@@ -60,7 +60,7 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should post dial" do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockOfficer.new]))
+      returns(stub(officials: [MockOfficer.new]))
 
     post switchboards_dial_url(Digits: '1', dial: { zipcode: '55555', chamber: '1' })
 

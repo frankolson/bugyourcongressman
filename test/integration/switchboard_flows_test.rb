@@ -13,7 +13,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
   test 'happy path' do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockOfficer.new]))
+      returns(stub(officials: [MockOfficer.new]))
     user_zipcode = '55555'
 
     # Greeted
@@ -59,7 +59,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
   test 'properly handeling Spanish locale' do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: [MockOfficer.new]))
+      returns(stub(officials: [MockOfficer.new]))
     user_zipcode = '55555'
 
     # Greeted
@@ -90,7 +90,7 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
 
   test 'zipcode does not match any congressmen' do
     CivicInformation::RepresentativesResource.stubs(:where).
-      returns(stub(officers: []))
+      returns(stub(officials: []))
     user_zipcode = '55555'
 
     # Greeted
