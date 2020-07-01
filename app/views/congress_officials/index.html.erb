@@ -1,0 +1,43 @@
+<main class="byc-masthead byc-masthead-background-style-1" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 text-center text-md-left">
+        <h1 class="mb-3">
+          Search For Your Congress Official
+        </h1>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="byc-masthead-followup">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <%= form_tag congress_officials_path, method: :get, class: 'form-inline justify-content-center' do %>
+          <div class="form-group mb-2">
+            <%= label_tag 'congress_official[address]', 'Address', class: 'sr-only' %>
+            <%= text_field_tag 'congress_official[address]', params.dig(:congress_official, :address),
+                  class: 'form-control mr-sm-2', placeholder: 'Enter zip code...',
+                  required: true %>
+          </div>
+
+          <div class="form-group mb-2">
+            <%= label_tag 'congress_official[chamber]', 'Chamber', class: 'sr-only' %>
+            <%= select_tag 'congress_official[chamber]',
+                  options_for_select(['House', 'Senate', 'Both'], params.dig(:congress_official, :chamber)),
+                  { class: 'custom-select mr-2', prompt: 'Select the chamber...' } %>
+          </div>
+
+          <%= submit_tag 'Search', class: 'btn btn-primary mb-2' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= @officials.map(&:name).join(', ') %>
+      </div>
+    </div>
+  </div>
+</div>

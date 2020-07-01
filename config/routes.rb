@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       as: :about_qualified_immunity
     get 'about-congress', to: 'pages#about_congress', as: :about_congress
 
+    resources :congress_officials, only: :index
+
     namespace :switchboards do
       resource :select_chamber,     controller: :select_chamber,     only: :create
       resource :select_congressman, controller: :select_congressman, only: :create
