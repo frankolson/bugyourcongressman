@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MockRepresentative
+class MockOfficer
   def name
     'Jacky Rosen'
   end
@@ -34,8 +34,8 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post select_congressman with results" do
-    CivicInformation::Representative.stubs(:where).
-      returns([MockRepresentative.new])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officers: [MockRepresentative.new]))
 
     post switchboards_select_congressman_url(Digits: '1', select_congressman: { zipcode: '55555' })
 
@@ -48,7 +48,8 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post select_congressman with no results" do
-    CivicInformation::Representative.stubs(:where).returns([])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officers: []))
 
     post switchboards_select_congressman_url(Digits: '1', select_congressman: { zipcode: '55555' })
 
@@ -58,8 +59,8 @@ class SwitchboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post dial" do
-    CivicInformation::Representative.stubs(:where).
-      returns([MockRepresentative.new])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officers: [MockRepresentative.new]))
 
     post switchboards_dial_url(Digits: '1', dial: { zipcode: '55555', chamber: '1' })
 
