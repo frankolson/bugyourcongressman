@@ -3,10 +3,10 @@ class Switchboards::SelectCongressmanController < Switchboards::BaseController
   def create
     @user_zipcode = select_congressman_params[:zipcode]
     @chamber = params[:Digits]
-    @congressmen = CivicInformation::Representative.where(
+    @congressmen = CivicInformation::RepresentativesResource.where(
       address: @user_zipcode,
       roles: selected_chamber(params[:Digits])
-    )
+    ).officials
   end
 
   private

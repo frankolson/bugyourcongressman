@@ -1,19 +1,19 @@
 require 'test_helper'
 
-class MockRepresentative
-  def name
-    'Jacky Rosen'
-  end
-
-  def phones
-    ['202-224-6244']
-  end
-end
-
 class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
+  class MockOfficer
+    def name
+      'Jacky Rosen'
+    end
+
+    def phones
+      ['202-224-6244']
+    end
+  end
+
   test 'happy path' do
-    CivicInformation::Representative.stubs(:where).
-      returns([MockRepresentative.new])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officials: [MockOfficer.new]))
     user_zipcode = '55555'
 
     # Greeted
@@ -58,8 +58,8 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test 'properly handeling Spanish locale' do
-    CivicInformation::Representative.stubs(:where).
-      returns([MockRepresentative.new])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officials: [MockOfficer.new]))
     user_zipcode = '55555'
 
     # Greeted
@@ -89,7 +89,8 @@ class SwitchboardFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test 'zipcode does not match any congressmen' do
-    CivicInformation::Representative.stubs(:where).returns([])
+    CivicInformation::RepresentativesResource.stubs(:where).
+      returns(stub(officials: []))
     user_zipcode = '55555'
 
     # Greeted
