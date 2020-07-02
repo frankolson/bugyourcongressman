@@ -12,7 +12,7 @@
 
 <div class="byc-masthead-followup">
   <div class="container">
-    <div class="row">
+    <div class="row mb-4">
       <div class="col-md-10 mx-auto">
         <%= form_tag congress_officials_path, method: :get, class: 'form-inline justify-content-center' do %>
           <div class="form-group mb-2">
@@ -34,10 +34,8 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <%= @officials.map(&:name).join(', ') %>
-      </div>
+    <div class="row justify-content-center">
+      <%= render partial: 'official', collection: @officials %>
     </div>
   </div>
 </div>
