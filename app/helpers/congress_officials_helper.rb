@@ -8,9 +8,37 @@ module CongressOfficialsHelper
   def channel_link_to(channel)
     case channel.type
     when 'Facebook'
-      link_to('Facebook', "https://facebook.com/#{channel.id}")
+      link_to "https://facebook.com/#{channel.id}" do
+        tag.i(class: 'fab fa-facebook') + ' Facebook'
+      end
     when 'Twitter'
-      link_to('Twitter', "https://twitter.com/#{channel.id}")
+      link_to "https://twitter.com/#{channel.id}" do
+        tag.i(class: 'fab fa-twitter') + ' Twitter'
+      end
     end
   end
+
+  def phone_link_to(phone_number)
+    link_to "tel:#{phone_number}" do
+      tag.i(class: 'fas fa-phone') + " #{phone_number}"
+    end
+  end
+
+  def email_link_to(email, index)
+    link_to "mailto:#{email}" do
+      tag.i(class: 'fas fa-envelope') + " Email #{titled_count(index)}"
+    end
+  end
+
+  def website_link_to(website, index)
+    link_to website do
+      tag.i(class: 'fas fa-globe') + " Website #{titled_count(index)}"
+    end
+  end
+
+  private
+
+    def titled_count(count)
+      count == 0 ? nil : count + 1
+    end
 end

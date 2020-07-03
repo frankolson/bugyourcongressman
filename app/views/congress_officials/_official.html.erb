@@ -7,16 +7,15 @@
     <h6 class="card-subtitle mb-2 text-muted"><%= official.party %></h6>
 
     <% official.phones.each do |phone_number| %>
-      <%= link_to phone_number, "tel:#{phone_number}" %><br />
+      <%= phone_link_to phone_number %><br />
     <% end %>
 
-    <% official.emails.each do |email| %>
-      <%= link_to email, "mailto:#{email}" %><br />
+    <% official.emails.each_with_index do |email, index| %>
+      <%= email_link_to email, index %><br />
     <% end %>
 
     <% official.urls.each_with_index do |url, index| %>
-        <% title = official.urls.size > 1 ? "Website #{index + 1}" : 'Website' %>
-        <%= link_to title, url %><br />
+      <%= website_link_to url, index %><br />
     <% end %>
 
     <% official.channels.each do |channel| %>
