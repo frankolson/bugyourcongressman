@@ -5,6 +5,14 @@ module CongressOfficialsHelper
       'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
   end
 
+  def titles(official)
+    titles = official.offices.collect do |office|
+      office.name + ' for ' + office.division.name
+    end
+
+    safe_join titles, raw('<br />')
+  end
+
   def channel_link_to(channel)
     case channel.type
     when 'Facebook'

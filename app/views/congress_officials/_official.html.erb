@@ -4,7 +4,11 @@
 
   <div class="card-body">
     <h5 class="card-title"><%= official.name %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= official.party %></h6>
+    <h6 class="card-subtitle mb-2 text-muted"><%= titles(official) %></h6>
+
+    <p class="text-muted">
+      <small><em><%= official.party %></em></small>
+    </p>
 
     <% official.phones.each do |phone_number| %>
       <%= phone_link_to phone_number %><br />
