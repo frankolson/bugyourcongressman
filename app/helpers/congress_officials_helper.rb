@@ -7,7 +7,7 @@ module CongressOfficialsHelper
 
   def titles(official)
     titles = official.offices.collect do |office|
-      office.name + ' for ' + office.division.name
+      office.name + " #{t('.for')} " + office.division.name
     end
 
     safe_join titles, raw('<br />')
@@ -34,13 +34,15 @@ module CongressOfficialsHelper
 
   def email_link_to(email, index)
     link_to "mailto:#{email}" do
-      tag.i(class: 'fas fa-envelope') + " Email #{titled_count(index)}"
+      tag.i(class: 'fas fa-envelope') +
+        " #{t('.email')} #{titled_count(index)}"
     end
   end
 
   def website_link_to(website, index)
     link_to website do
-      tag.i(class: 'fas fa-globe') + " Website #{titled_count(index)}"
+      tag.i(class: 'fas fa-globe') +
+        " #{t('.website')} #{titled_count(index)}"
     end
   end
 

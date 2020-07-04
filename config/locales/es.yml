@@ -159,3 +159,13 @@ es:
           Unidos. Si usted esta interesado en apprendiendo mas, vea este corto
           video muy útil en Youtube:"
         button_text: Youtube Video Corto sobre el Congreso
+  congress_officials:
+    index:
+      title: Busque a su funcionario del Congreso
+    search_form:
+      address_prompt: Ingrese su dirección...
+      chamber_prompt: Sala...
+    official:
+      for: para
+      email: E-mail
+      website: Sitio web

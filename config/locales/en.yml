@@ -184,3 +184,13 @@ en:
           If you are curious about learning more, check out this awesome crash
           course on YouTube:"
         button_text: YouTube Congress Crash Course
+  congress_officials:
+    index:
+      title: Search For Your Congress Official
+    search_form:
+      address_prompt: Enter your address...
+      chamber_prompt: Chamber...
+    official:
+      for: for
+      email: e-mail
+      website: sitio web
