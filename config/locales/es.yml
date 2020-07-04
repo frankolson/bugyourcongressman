@@ -28,6 +28,7 @@ es:
   layouts:
     application:
       navigation:
+        search_congress: Buscar congreso
         about:
           label: Acerca de
           qualified_immunity: Sobre “Qualified Immunity”

@@ -59,6 +59,7 @@ en:
   layouts:
     application:
       navigation:
+        search_congress: Search Congress
         about:
           label: About
           qualified_immunity: About "Qualified Immunity"
