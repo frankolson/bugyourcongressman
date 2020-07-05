@@ -4,6 +4,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@googlemaps/google-maps-services-js": "^3.1.2",
+    "@googlemaps/js-api-loader": "^1.1.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

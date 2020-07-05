@@ -819,6 +819,11 @@
     query-string "^6.11.0"
     retry-axios "^2.2.1"
 
+"@googlemaps/js-api-loader@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.1.0.tgz#94d30f24ec7584b57fe3ac74b98f67d5b9e951cf"
+  integrity sha512-EEbZYSqZMjbz9XM1YUXr/3oBoTaB3/ADvuwnJCUiVRSC3WtvjK2ay/w+xo1GFCzlN0rlHD2RbAXQMskV8pIm4A==
+
 "@rails/actioncable@^6.0.0":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3.tgz#722b4b639936129307ddbab3a390f6bcacf3e7bc"

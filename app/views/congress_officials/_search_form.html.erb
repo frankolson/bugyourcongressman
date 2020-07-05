@@ -4,7 +4,8 @@
       <%= label_tag 'congress_official[address]', 'Address', class: 'sr-only' %>
       <%= text_field_tag 'congress_official[address]', params.dig(:congress_official, :address),
             class: 'form-control mr-md-2', placeholder: t('.address_prompt'),
-            autocomplete: 'off', required: true, data: { controller: 'address-autocomplete' } %>
+            autocomplete: 'off', required: true, data: { controller: 'address-autocomplete',
+            'address-autocomplete-google-key': Rails.application.credentials.google[:api_key] } %>
     </div>
 
     <div class="form-group col mb-2">

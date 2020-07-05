@@ -1,30 +1,25 @@
 import { Controller } from "stimulus"
+import { Loader } from "@googlemaps/js-api-loader";
 
 export default class extends Controller {
   connect() {
-    if (!window.google) {
-      console.error('[address-autocomplete]: Google script not loaded')
-      return;
-    }
+    const loader = new Loader({
+      apiKey: this.data.get("googleKey"),
+      libraries: ["places"]
+    });
 
-    if (!window.google.maps) {
-      console.error('[address-autocomplete]: Google maps script not loaded')
-      return;
-    }
-
-    if (!window.google.maps.places) {
-      console.error('[address-autocomplete]: Google maps places script not loaded')
-      return;
-    }
-
-    new window.google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */
-      this.element,
-      { types: ['geocode'] }
-    )
-  }
-
-  get googleApiKey() {
-
+    loader
+      .load()
+      .then(() => {
+        new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */
+          this.element,
+          { types: ['geocode'] }
+        )
+      })
+      .catch(e => {
+        console.error(e)
+        return;
+      });
   }
 }
