@@ -21,14 +21,14 @@
     <div class="row justify-content-center mt-4">
       <% if @officials.nil? %>
         <h3 class="text-center my-5">
-          <i class="fas fa-search text-muted"></i><br />
-          Try searching your address
+          <i class="fas fa-search text-muted mb-3"></i><br />
+          <%= t('.no_search') %>
         </h3>
       <% else %>
         <% if @officials.empty? %>
           <h3 class="text-center my-5">
-            <i class="fas fa-search text-muted"></i><br />
-            Hmmm... that address doesn't seem to have any congress officials. Try another.
+            <i class="fas fa-search text-muted mb-3"></i><br />
+            <%= t('.no_results') %>
           </h3>
         <% else %>
           <%= render partial: 'official', collection: @officials %>

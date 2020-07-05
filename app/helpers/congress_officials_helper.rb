@@ -1,4 +1,12 @@
 module CongressOfficialsHelper
+  def chamber_type_options
+    [
+      [t('.chamber_options.both'),'Both'],
+      [t('.chamber_options.house'),'House'],
+      [t('.chamber_options.senate'),'Senate']
+    ]
+  end
+
   def official_photo_url(official)
     official.photo_url.present? ?
       official.photo_url :

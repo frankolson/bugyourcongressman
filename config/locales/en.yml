@@ -188,9 +188,17 @@ en:
   congress_officials:
     index:
       title: Search For Your Congress Official
+      no_search: Try searching your address.
+      no_results:
+        Hmmm... that address doesn't seem to have any congress officials. Try another.
     search_form:
       address_prompt: Enter your address...
       chamber_prompt: Chamber...
+      chamber_options:
+        both: Both
+        house: House
+        senate: Senate
+      search: Search
     official:
       for: for
       email: e-mail

@@ -11,12 +11,12 @@
     <div class="form-group col mb-2">
       <%= label_tag 'congress_official[chamber]', 'Chamber', class: 'sr-only' %>
       <%= select_tag 'congress_official[chamber]',
-            options_for_select(['House', 'Senate', 'Both'], params.dig(:congress_official, :chamber)),
+            options_for_select(chamber_type_options, params.dig(:congress_official, :chamber)),
             { class: 'form-control mr-md-2', prompt: t('.chamber_prompt') } %>
     </div>
 
     <div class="form-group col mb-2">
-      <%= submit_tag 'Search', class: 'btn btn-primary w-100' %>
+      <%= submit_tag t('.search'), class: 'btn btn-primary w-100' %>
     </div>
   </div>
 <% end %>
