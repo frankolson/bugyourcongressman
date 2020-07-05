@@ -1,13 +1,13 @@
 class CongressOfficialsController < ApplicationController
   def index
+    @officials = nil
+
     if params[:congress_official].present?
       @officials = CivicInformation::RepresentativesResource.where(
         address: search_params[:address],
         roles: selected_chamber(search_params[:chamber]),
         levels: ['country']
       ).officials
-    else
-      @officials = []
     end
   end
 

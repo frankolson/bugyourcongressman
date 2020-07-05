@@ -19,7 +19,21 @@
     </div>
 
     <div class="row justify-content-center mt-4">
-      <%= render partial: 'official', collection: @officials %>
+      <% if @officials.nil? %>
+        <h3 class="text-center my-5">
+          <i class="fas fa-search text-muted"></i><br />
+          Try searching your address
+        </h3>
+      <% else %>
+        <% if @officials.empty? %>
+          <h3 class="text-center my-5">
+            <i class="fas fa-search text-muted"></i><br />
+            Hmmm... that address doesn't seem to have any congress officials. Try another.
+          </h3>
+        <% else %>
+          <%= render partial: 'official', collection: @officials %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
