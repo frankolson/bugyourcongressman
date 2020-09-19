@@ -64,6 +64,7 @@ en:
           label: About
           qualified_immunity: About "Qualified Immunity"
           congress: About Congress
+          us: About Us
       footer:
         attributes_html:
           The code for this site is public on

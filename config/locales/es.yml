@@ -33,6 +33,7 @@ es:
           label: Acerca de
           qualified_immunity: Sobre “Qualified Immunity”
           congress: Sobre el Congreso
+          us: Sobre nosotras
       footer:
         attributes_html:
           El código para este sitio es público en

@@ -31,7 +31,6 @@
 
                 <%= t('.navigation.about.label') %>
               </a>
-
               <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="byc-about">
                 <%= link_to t('.navigation.about.qualified_immunity'),
                       about_qualified_immunity_path, class: 'dropdown-item' %>
@@ -40,6 +39,11 @@
 
                 <%= link_to t('.navigation.about.congress'),
                       about_congress_path, class: 'dropdown-item' %>
+
+                <div class="dropdown-divider"></div>
+
+                <%= link_to t('.navigation.about.us'),
+                      about_us_path, class: 'dropdown-item' %>
               </div>
             </li>
 
