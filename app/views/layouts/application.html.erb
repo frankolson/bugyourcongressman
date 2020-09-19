@@ -53,9 +53,9 @@
                 <%= I18n.locale %>
               </a>
               <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="byc-locales">
-                <%= link_to 'English', { locale: 'en' }, class: 'dropdown-item' %>
+                <%= link_to 'English', request.params.merge(locale: 'en'), class: 'dropdown-item' %>
                 <div class="dropdown-divider"></div>
-                <%= link_to 'Español', { locale: 'es' }, class: 'dropdown-item' %>
+                <%= link_to 'Español', request.params.merge(locale: 'es'), class: 'dropdown-item' %>
               </div>
             </li>
           </ul>
