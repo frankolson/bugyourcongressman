@@ -42,6 +42,9 @@
                       about_congress_path, class: 'dropdown-item' %>
               </div>
             </li>
+
+            <%= link_to t('.navigation.search_congress'),
+                  congress_officials_path, class: 'nav-item nav-link mr-md-2' %>
           </ul>
 
           <ul class="navbar-nav ml-md-auto">
@@ -50,9 +53,9 @@
                 <%= I18n.locale %>
               </a>
               <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="byc-locales">
-                <%= link_to 'English', { locale: 'en' }, class: 'dropdown-item' %>
+                <%= link_to 'English', request.params.merge(locale: 'en'), class: 'dropdown-item' %>
                 <div class="dropdown-divider"></div>
-                <%= link_to 'Español', { locale: 'es' }, class: 'dropdown-item' %>
+                <%= link_to 'Español', request.params.merge(locale: 'es'), class: 'dropdown-item' %>
               </div>
             </li>
           </ul>
@@ -61,11 +64,9 @@
     </header>
 
     <%= yield %>
-
-    <footer class="mt-auto text-center">
-      <p>
-        <%= t('.footer.attributes_html') %>
-      </p>
-    </footer>
   </body>
+
+  <footer class="footer mt-auto text-center">
+    <p><%= t('.footer.attributes_html') %></p>
+  </footer>
 </html>

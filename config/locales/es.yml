@@ -28,6 +28,7 @@ es:
   layouts:
     application:
       navigation:
+        search_congress: Buscar congreso
         about:
           label: Acerca de
           qualified_immunity: Sobre “Qualified Immunity”
@@ -159,3 +160,22 @@ es:
           Unidos. Si usted esta interesado en apprendiendo mas, vea este corto
           video muy útil en Youtube:"
         button_text: Youtube Video Corto sobre el Congreso
+  congress_officials:
+    index:
+      title: Busque a su funcionario del Congreso
+      no_search: Intenta buscar tu dirección.
+      no_results:
+        Esa dirección no parece tener ningún funcionario del congreso.
+        Prueba otra.
+    search_form:
+      address_prompt: Ingrese su dirección...
+      chamber_prompt: Sala...
+      chamber_options:
+        both: Ambos
+        house: Cámara
+        senate: Senado
+      search: Buscar
+    official:
+      for: para
+      email: E-mail
+      website: Sitio web

@@ -59,6 +59,7 @@ en:
   layouts:
     application:
       navigation:
+        search_congress: Search Congress
         about:
           label: About
           qualified_immunity: About "Qualified Immunity"
@@ -184,3 +185,21 @@ en:
           If you are curious about learning more, check out this awesome crash
           course on YouTube:"
         button_text: YouTube Congress Crash Course
+  congress_officials:
+    index:
+      title: Search For Your Congress Official
+      no_search: Try searching your address.
+      no_results:
+        Hmmm... that address doesn't seem to have any congress officials. Try another.
+    search_form:
+      address_prompt: Enter your address...
+      chamber_prompt: Chamber...
+      chamber_options:
+        both: Both
+        house: House
+        senate: Senate
+      search: Search
+    official:
+      for: for
+      email: E-mail
+      website: Website

@@ -2,12 +2,28 @@ $theme-colors: (
   "custom-dark": #1c1f21,
 );
 @import "~bootstrap/scss/bootstrap";
+@import '@fortawesome/fontawesome-free';
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 3rem;
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
 }
 
 /* MASTHEAD STYLES

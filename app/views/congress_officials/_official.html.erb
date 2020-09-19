@@ -1,0 +1,31 @@
+<div class="card col-10 col-sm-6 col-md-4 col-lg-3 mx-2 mt-2">
+  <img src="<%= official_photo_url(official) %>" alt="Photo of <%= official.name %>"
+       class="img-fluid rounded-circle mx-auto d-block mt-4" style="width: 10rem; height: 10rem; object-fit:cover;">
+
+  <div class="card-body">
+    <h5 class="card-title"><%= official.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= titles(official) %></h6>
+
+    <p class="text-muted">
+      <small><em><%= official.party %></em></small>
+    </p>
+
+    <% official.phones.each do |phone_number| %>
+      <%= phone_link_to phone_number %><br />
+    <% end %>
+
+    <% official.emails.each_with_index do |email, index| %>
+      <%= email_link_to email, index %><br />
+    <% end %>
+
+    <% official.urls.each_with_index do |url, index| %>
+      <%= website_link_to url, index %><br />
+    <% end %>
+
+    <% official.channels.each do |channel| %>
+      <% if channel.type.in? ['Facebook', 'Twitter'] %>
+        <%= channel_link_to channel %><br />
+      <% end %>
+    <% end %>
+  </div>
+</div>

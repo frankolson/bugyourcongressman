@@ -1,0 +1,22 @@
+<%= form_tag congress_officials_path, method: :get, class: 'w-100' do %>
+  <div class="form-row">
+    <div class="form-group col-md-7 mb-2">
+      <%= label_tag 'congress_official[address]', 'Address', class: 'sr-only' %>
+      <%= text_field_tag 'congress_official[address]', params.dig(:congress_official, :address),
+            class: 'form-control mr-md-2', placeholder: t('.address_prompt'),
+            autocomplete: 'off', required: true, data: { controller: 'address-autocomplete',
+            'address-autocomplete-google-key': Rails.application.credentials.google[:api_key] } %>
+    </div>
+
+    <div class="form-group col mb-2">
+      <%= label_tag 'congress_official[chamber]', 'Chamber', class: 'sr-only' %>
+      <%= select_tag 'congress_official[chamber]',
+            options_for_select(chamber_type_options, params.dig(:congress_official, :chamber)),
+            { class: 'custom-select mr-md-2', prompt: t('.chamber_prompt') } %>
+    </div>
+
+    <div class="form-group col mb-2">
+      <%= submit_tag t('.search'), class: 'btn btn-primary w-100' %>
+    </div>
+  </div>
+<% end %>
